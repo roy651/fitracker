@@ -14,6 +14,16 @@ Ski Prep Pro is a Progressive Web App (PWA) designed to guide you through high-i
 - **⚡ Wake Lock:** Keeps your screen awake during workouts (no more unlocking with sweaty hands!).
 - **🎯 Sport-Specific Programming:** Workouts designed to build quad stamina, core stability, and explosive power.
 
+## 🌐 Live App (Easiest Way)
+
+You don't need to be a developer to use Ski Prep Pro! The app is available online and can be installed directly from our website:
+
+👉 **[Launch Ski Prep Pro](https://roy651.github.io/fitracker/)** 👈
+
+1. Visit the link above on your phone.
+2. Follow the "Add to Home Screen" prompt (or see instructions below).
+3. Going forward, the app works **100% offline**!
+
 ## 🚀 Getting Started
 
 ### Prerequisites
