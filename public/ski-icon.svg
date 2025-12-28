@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="snowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#skyGrad)"/>
+  
+  <!-- Mountain -->
+  <polygon points="50,20 80,70 20,70" fill="url(#snowGrad)"/>
+  <polygon points="50,20 35,45 50,40 65,45" fill="#f8fafc"/>
+  
+  <!-- Snow cap detail -->
+  <polygon points="50,20 40,35 50,32 60,35" fill="#ffffff"/>
+  
+  <!-- Ski poles -->
+  <line x1="30" y1="75" x2="35" y2="55" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+  <line x1="70" y1="75" x2="65" y2="55" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Snowflake accent -->
+  <circle cx="75" cy="25" r="2" fill="#ffffff"/>
+  <circle cx="78" cy="30" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="72" cy="28" r="1" fill="#ffffff" opacity="0.5"/>
+</svg>

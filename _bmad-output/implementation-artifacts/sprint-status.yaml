@@ -1,0 +1,65 @@
+# generated: 2025-12-28
+# project: fitracker
+# project_key: fitracker
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2025-12-28
+project: fitracker
+project_key: fitracker
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  epic-1: done
+  1-1-web-speech-api-service-implementation: done
+  1-2-voice-toggle-and-persistence: done
+  1-3-workout-audio-integration: done
+  epic-1-retrospective: done
+
+  epic-2: done
+  2-1-block-rest-data-schema-state-logic: done
+  2-2-block-rest-ui-implementation: done
+  2-3-next-up-preview-support: done
+  epic-2-retrospective: done
+
+  epic-3: done
+  3-1-wake-lock-service-implementation: done
+  3-2-workout-wake-lock-integration: done
+  epic-3-retrospective: done
+
+  epic-4: done
+  4-1-pwa-core-implementation: done
+  4-2-installation-ux-guidance: done
+  4-3-hardware-e2e-quality-gate: done
+  4-4-final-polish-accessibility-audit: done
+  epic-4-retrospective: optional

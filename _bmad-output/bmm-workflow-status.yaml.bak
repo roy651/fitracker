@@ -1,0 +1,124 @@
+# Workflow Status - BMM Tracking File
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-12-27"
+project: "fitracker"
+project_type: "web-app"
+selected_track: "method"
+field_type: "brownfield"
+workflow_path: "_bmad/bmm/workflows/workflow-status/paths/method-brownfield.yaml"
+
+workflow_status:
+  # Prerequisite: Documentation (required for brownfield)
+  prerequisite:
+    - id: "document-project"
+      status: "docs/index.md"
+      agent: "analyst"
+      command: "document-project"
+      purpose: "Understand existing codebase before planning"
+      output: "docs/index.md"
+      completed: "2025-12-27"
+
+  # Phase 0: Discovery (Optional)
+  phase_0_discovery:
+    - id: "brainstorm-project"
+      status: "optional"
+      agent: "analyst"
+      command: "brainstorm-project"
+      output: ""
+
+    - id: "research"
+      status: "optional"
+      agent: "analyst"
+      command: "research"
+      output: ""
+
+    - id: "product-brief"
+      status: "optional"
+      agent: "analyst"
+      command: "product-brief"
+      output: ""
+
+  # Phase 1: Planning
+  phase_1_planning:
+    - id: "prd"
+      status: "_bmad-output/planning-artifacts/prd.md"
+      agent: "pm"
+      command: "prd"
+      purpose: "Create PRD focused on new features/changes"
+      output: "_bmad-output/planning-artifacts/prd.md"
+      completed: "2025-12-27"
+
+    - id: "create-ux-design"
+      status: "_bmad-output/planning-artifacts/ux-design-specification.md"
+      agent: "ux-designer"
+      command: "create-ux-design"
+      output: "_bmad-output/planning-artifacts/ux-design-specification.md"
+      completed: "2025-12-27"
+
+  # Phase 2: Solutioning
+  phase_2_solutioning:
+    - id: "create-architecture"
+      status: "_bmad-output/planning-artifacts/architecture.md"
+      agent: "architect"
+      command: "create-architecture"
+      purpose: "Integration architecture - solution design for THIS project"
+      note: "HIGHLY RECOMMENDED: Distills massive brownfield context into focused solution design"
+      output: ""
+
+    - id: "create-epics-and-stories"
+      status: "_bmad-output/planning-artifacts/epics.md"
+      agent: "pm"
+      command: "create-epics-and-stories"
+      purpose: "Break down PRD into implementable epics and stories"
+      output: "_bmad-output/planning-artifacts/epics.md"
+      completed: "2025-12-27"
+
+    - id: "test-design"
+      status: "recommended"
+      agent: "tea"
+      command: "test-design"
+      purpose: "System-level testability review"
+      output: ""
+
+    - id: "validate-architecture"
+      status: "optional"
+      agent: "architect"
+      command: "validate-architecture"
+      output: ""
+
+    - id: "implementation-readiness"
+      status: "required"
+      agent: "architect"
+      command: "implementation-readiness"
+      purpose: "Validates PRD + Architecture + Epics + UX"
+      output: ""
+
+  # Phase 3: Implementation
+  phase_3_implementation:
+    - id: "sprint-planning"
+      status: "required"
+      agent: "sm"
+      command: "sprint-planning"
+      purpose: "Creates sprint plan with stories"
+      output: ""
+
+# Next action
+next_workflow:
+  id: "test-design"
+  agent: "tea"
+  command: "/bmad-bmm-workflows-testarch-test-design"
+  note: "Check system-level testability before implementation"

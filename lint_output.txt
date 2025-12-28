@@ -1,0 +1,25 @@
+
+> fitracker@0.0.0 lint
+> eslint .
+
+
+/Users/royabitbol/Development/private/fitracker/src/components/WorkoutPlayer.jsx
+  251:17  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  249 |             case StepType.WORK:
+  250 |                 stepDurationRef.current = currentStep.duration;
+> 251 |                 setTimeRemaining(currentStep.duration);
+      |                 ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  252 |                 setIsRunning(true);
+  253 |                 setIsPaused(false);
+  254 |                 if (audioEnabled) audioManager.playWorkStart();  react-hooks/set-state-in-effect
+  282:8   warning  React Hook useEffect has a missing dependency: 'currentStep'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+
+✖ 2 problems (1 error, 1 warning)
+
