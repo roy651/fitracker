@@ -326,7 +326,7 @@ describe('WorkoutPlayer Block Rest UI', () => {
 
             setTimeout(() => {
                 // Should show "Next:" label and the exercise name from next block
-                expect(screen.getByText('Next:')).toBeTruthy();
+                expect(screen.getByText('Next Up:')).toBeTruthy();
                 // "Drill 2" is the name returned by getExercise mock for drill-2
                 expect(screen.getByText('Drill 2')).toBeTruthy();
                 done();
