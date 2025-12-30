@@ -1,0 +1,22 @@
+{
+    "cat_cow": {
+        "name": "Cat-Cow Stretch",
+        "instruction": "Move spine rhythmically. Breathe deeply.",
+        "visual_ref": "cat_cow.png"
+    },
+    "dyn_ham_scoop": {
+        "name": "Dynamic Hamstring Scoop",
+        "instruction": "Step forward, heel down, scoop ground.",
+        "visual_ref": "ham_scoop.png"
+    },
+    "hip_opener": {
+        "name": "Dynamic Hip Opener",
+        "instruction": "Deep lunge, rotate torso toward front knee.",
+        "visual_ref": "hip_opener.png"
+    },
+    "cossack_sq": {
+        "name": "Cossack Squat",
+        "instruction": "Wide stance, sit into one heel. Alternating.",
+        "visual_ref": "cossack.png"
+    }
+}

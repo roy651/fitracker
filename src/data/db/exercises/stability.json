@@ -1,0 +1,37 @@
+{
+    "bosu_squat": {
+        "name": "BOSU Air Squat",
+        "instruction": "Stand on dome. Maintain balance.",
+        "visual_ref": "bosu_sq.png"
+    },
+    "bosu_bridge": {
+        "name": "BOSU Hamstring Bridge",
+        "instruction": "Feet on dome, lift hips.",
+        "visual_ref": "bosu_bridge.png"
+    },
+    "bosu_sl_bal": {
+        "name": "BOSU SL Balance",
+        "instruction": "30s per leg on the dome.",
+        "visual_ref": "bosu_bal.png"
+    },
+    "bird_dog": {
+        "name": "Bird-Dog (on BOSU)",
+        "instruction": "Knees on dome. Extend opposite limbs.",
+        "visual_ref": "bird_dog.png"
+    },
+    "dead_bug": {
+        "name": "Dead Bug",
+        "instruction": "Opposite arm/leg move. Back glued to floor.",
+        "visual_ref": "dead_bug.png"
+    },
+    "plank_hold": {
+        "name": "Forearm Plank",
+        "instruction": "Keep glutes and core engaged.",
+        "visual_ref": "plank.png"
+    },
+    "pallof_press": {
+        "name": "Pallof Press",
+        "instruction": "Hold cable at chest, push out, resist rotation.",
+        "visual_ref": "pallof.png"
+    }
+}

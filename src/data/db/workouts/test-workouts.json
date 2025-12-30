@@ -1,0 +1,26 @@
+{
+    "test_block_rest_example": {
+        "name": "Test: Block Rest Feature",
+        "blocks": [
+            {
+                "name": "Block 1",
+                "rounds": 2,
+                "drills": [
+                    "cat_cow"
+                ],
+                "work_sec": 10,
+                "rest_sec": 5,
+                "block_rest": 30
+            },
+            {
+                "name": "Block 2",
+                "rounds": 1,
+                "drills": [
+                    "cat_cow"
+                ],
+                "work_sec": 10,
+                "rest_sec": 5
+            }
+        ]
+    }
+}

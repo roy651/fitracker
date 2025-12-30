@@ -1,0 +1,31 @@
+{
+    "home_thursday_p1": {
+        "name": "Thu: Proprioception Base",
+        "blocks": [
+            {
+                "name": "Warmup",
+                "rounds": 2,
+                "drills": [
+                    "cat_cow",
+                    "dyn_ham_scoop"
+                ],
+                "work_sec": 45,
+                "rest_sec": 15,
+                "block_rest": 30
+            },
+            {
+                "name": "BOSU Circuit",
+                "rounds": 5,
+                "drills": [
+                    "bosu_squat",
+                    "bosu_bridge",
+                    "bosu_sl_bal",
+                    "bird_dog"
+                ],
+                "work_sec": 45,
+                "rest_sec": 30,
+                "block_rest": 60
+            }
+        ]
+    }
+}

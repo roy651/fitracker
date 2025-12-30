@@ -1,0 +1,22 @@
+{
+    "box_jump": {
+        "name": "Box Jump",
+        "instruction": "Explode up, land soft, step down.",
+        "visual_ref": "box_jump.png"
+    },
+    "skater_hops": {
+        "name": "Skater Hops",
+        "instruction": "Lateral explosive jumps. Hold land 1s.",
+        "visual_ref": "skater.png"
+    },
+    "nordic_drop": {
+        "name": "Nordic Hamstring Drop",
+        "instruction": "Lower torso slowly to floor using hams.",
+        "visual_ref": "nordic.png"
+    },
+    "russian_twist": {
+        "name": "Weighted Russian Twist",
+        "instruction": "Rotate shoulders side to side.",
+        "visual_ref": "twist.png"
+    }
+}

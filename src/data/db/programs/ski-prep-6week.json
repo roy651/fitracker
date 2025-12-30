@@ -1,0 +1,39 @@
+{
+    "id": "ski-prep-6week",
+    "name": "6-Week Ski Preparation",
+    "description": "Build quad stamina, core stability, and explosive power for skiing",
+    "duration_weeks": 6,
+    "frequency": "3 days/week",
+    "schedule": {
+        "week_1": {
+            "Monday": "gym_monday_p1",
+            "Wednesday": "gym_wednesday_p1",
+            "Thursday": "home_thursday_p1"
+        },
+        "week_2": {
+            "Monday": "gym_monday_p1",
+            "Wednesday": "gym_wednesday_p1",
+            "Thursday": "home_thursday_p1"
+        },
+        "week_3": {
+            "Monday": "gym_monday_p1",
+            "Wednesday": "gym_wednesday_p1",
+            "Thursday": "home_thursday_p1"
+        },
+        "week_4": {
+            "Monday": "gym_monday_p2",
+            "Wednesday": "gym_wednesday_p2",
+            "Thursday": "home_thursday_p2"
+        },
+        "week_5": {
+            "Monday": "gym_monday_p2",
+            "Wednesday": "gym_wednesday_p2",
+            "Thursday": "home_thursday_p2"
+        },
+        "week_6": {
+            "Monday": "gym_monday_p2",
+            "Wednesday": "gym_wednesday_p2",
+            "Thursday": "home_thursday_p2"
+        }
+    }
+}

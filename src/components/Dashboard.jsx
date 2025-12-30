@@ -9,13 +9,16 @@ import {
     Snowflake,
     Zap,
     Target,
+    Settings,
+    X,
 } from "lucide-react";
 import {
-    weekKeys,
     getDaysForWeek,
     getWorkoutTemplate,
 } from "../data/workoutDatabase";
 import { getWorkoutSummary, formatTime } from "../utils/linearizer";
+import { useProgramSelection } from "../hooks/useProgramSelection";
+import ProgramSelector from "./ProgramSelector";
 
 // Week display names - Unused but kept for reference if needed? No, delete to satisfy lint.
 // const weekLabels = { ... };
@@ -54,6 +57,12 @@ const dayDescriptions = {
 };
 
 export default function Dashboard({ onStartWorkout }) {
+    const { selectedProgram, setSelectedProgram, availablePrograms } = useProgramSelection();
+    const [showProgramSelector, setShowProgramSelector] = useState(false);
+
+    // Use program's schedule for week keys
+    const weekKeys = selectedProgram?.schedule ? Object.keys(selectedProgram.schedule) : [];
+
     const [selectedWeek, setSelectedWeek] = useState(weekKeys[0]);
     const [selectedDay, setSelectedDay] = useState(null);
 
@@ -80,6 +89,14 @@ export default function Dashboard({ onStartWorkout }) {
         setSelectedDay(null); // Reset day selection when week changes
     };
 
+    const handleProgramChange = (programId) => {
+        setSelectedProgram(programId);
+        setShowProgramSelector(false);
+        // Reset selections when program changes
+        setSelectedWeek(weekKeys[0]);
+        setSelectedDay(null);
+    };
+
     const handleStartWorkout = () => {
         if (selectedWorkout) {
             onStartWorkout(selectedWeek, selectedDay, selectedWorkout);
@@ -90,16 +107,33 @@ export default function Dashboard({ onStartWorkout }) {
         <div className="min-h-screen flex flex-col p-4 pb-8 safe-bottom safe-top">
             {/* Header */}
             <header className="text-center mb-6 animate-fade-in">
-                <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="relative">
-                        <Mountain className="w-10 h-10 text-sky-400" />
-                        <Snowflake className="w-4 h-4 text-white absolute -top-1 -right-1 animate-pulse" />
+                <div className="flex items-center justify-between mb-2">
+                    {/* Settings Button (Left) */}
+                    <button
+                        onClick={() => setShowProgramSelector(true)}
+                        className="p-2 rounded-lg hover:bg-slate-800/60 transition-colors"
+                        aria-label="Settings"
+                    >
+                        <Settings className="w-5 h-5 text-slate-400" />
+                    </button>
+
+                    {/* Title (Center) */}
+                    <div className="flex-1">
+                        <div className="flex items-center justify-center gap-3 mb-2">
+                            <div className="relative">
+                                <Mountain className="w-10 h-10 text-sky-400" />
+                                <Snowflake className="w-4 h-4 text-white absolute -top-1 -right-1 animate-pulse" />
+                            </div>
+                            <h1 className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">
+                                Ski Prep Pro
+                            </h1>
+                        </div>
                     </div>
-                    <h1 className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">
-                        Ski Prep Pro
-                    </h1>
+
+                    {/* Spacer (Right) */}
+                    <div className="w-9"></div>
                 </div>
-                <p className="text-slate-400 text-sm">6-Week Training Program</p>
+                <p className="text-slate-400 text-sm">{selectedProgram?.name || 'Loading...'}</p>
             </header>
 
             {/* Phase Banner */}
@@ -292,6 +326,32 @@ export default function Dashboard({ onStartWorkout }) {
                     🎿 Ready for the slopes • Built for athletes
                 </p>
             </footer>
+
+            {/* Program Selector Modal */}
+            {showProgramSelector && (
+                <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 animate-fade-in" onClick={() => setShowProgramSelector(false)}>
+                    <div
+                        className="w-full max-w-lg bg-slate-900 rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto animate-slide-up"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex items-center justify-between mb-4">
+                            <h2 className="text-xl font-bold text-white">Change Program</h2>
+                            <button
+                                onClick={() => setShowProgramSelector(false)}
+                                className="p-2 rounded-lg hover:bg-slate-800 transition-colors"
+                            >
+                                <X className="w-5 h-5 text-slate-400" />
+                            </button>
+                        </div>
+
+                        <ProgramSelector
+                            programs={availablePrograms}
+                            selectedProgramId={selectedProgram?.id}
+                            onSelect={handleProgramChange}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

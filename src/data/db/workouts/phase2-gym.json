@@ -1,0 +1,84 @@
+{
+    "gym_monday_p2": {
+        "name": "Mon: Explosive Power",
+        "blocks": [
+            {
+                "name": "Warmup",
+                "rounds": 2,
+                "drills": [
+                    "cat_cow",
+                    "dyn_ham_scoop",
+                    "cossack_sq"
+                ],
+                "work_sec": 45,
+                "rest_sec": 15,
+                "block_rest": 30
+            },
+            {
+                "name": "Power Circuit",
+                "rounds": 4,
+                "drills": [
+                    "box_jump",
+                    "rdl_heavy",
+                    "skater_hops",
+                    "russian_twist"
+                ],
+                "work_sec": 40,
+                "rest_sec": 50,
+                "block_rest": 60
+            },
+            {
+                "name": "Strength Finisher",
+                "rounds": 2,
+                "drills": [
+                    "goblet_sq_tempo",
+                    "plank_hold"
+                ],
+                "work_sec": 50,
+                "rest_sec": 30,
+                "block_rest": 60
+            }
+        ]
+    },
+    "gym_wednesday_p2": {
+        "name": "Wed: Speed & Endurance",
+        "blocks": [
+            {
+                "name": "Warmup",
+                "rounds": 2,
+                "drills": [
+                    "hip_opener",
+                    "dyn_ham_scoop",
+                    "cossack_sq"
+                ],
+                "work_sec": 45,
+                "rest_sec": 15,
+                "block_rest": 30
+            },
+            {
+                "name": "Circuit",
+                "rounds": 4,
+                "drills": [
+                    "leg_press_sl",
+                    "nordic_drop",
+                    "skater_hops",
+                    "pallof_press"
+                ],
+                "work_sec": 45,
+                "rest_sec": 45,
+                "block_rest": 60
+            },
+            {
+                "name": "Core Burn",
+                "rounds": 3,
+                "drills": [
+                    "dead_bug",
+                    "russian_twist"
+                ],
+                "work_sec": 50,
+                "rest_sec": 10,
+                "block_rest": 60
+            }
+        ]
+    }
+}
