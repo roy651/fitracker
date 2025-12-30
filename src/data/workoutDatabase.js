@@ -125,6 +125,7 @@ export const workoutDatabase = {
                     drills: ["cat_cow", "dyn_ham_scoop", "hip_opener"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "Circuit",
@@ -132,6 +133,7 @@ export const workoutDatabase = {
                     drills: ["goblet_sq_tempo", "rdl_heavy", "bulgarian_ss", "pallof_press"],
                     work_sec: 50,
                     rest_sec: 40,
+                    block_rest: 60,
                 },
                 {
                     name: "Finisher",
@@ -139,6 +141,7 @@ export const workoutDatabase = {
                     drills: ["plank_hold", "dead_bug"],
                     work_sec: 60,
                     rest_sec: 20,
+                    block_rest: 60,
                 },
             ],
         },
@@ -151,6 +154,7 @@ export const workoutDatabase = {
                     drills: ["cat_cow", "cossack_sq", "hip_opener"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "Circuit",
@@ -158,6 +162,7 @@ export const workoutDatabase = {
                     drills: ["leg_press_sl", "hamstring_curl", "step_up", "dead_bug"],
                     work_sec: 50,
                     rest_sec: 40,
+                    block_rest: 60,
                 },
                 {
                     name: "Finisher",
@@ -165,6 +170,7 @@ export const workoutDatabase = {
                     drills: ["calf_raise", "pallof_press"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 60,
                 },
             ],
         },
@@ -177,6 +183,7 @@ export const workoutDatabase = {
                     drills: ["cat_cow", "dyn_ham_scoop"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "BOSU Circuit",
@@ -184,6 +191,7 @@ export const workoutDatabase = {
                     drills: ["bosu_squat", "bosu_bridge", "bosu_sl_bal", "bird_dog"],
                     work_sec: 45,
                     rest_sec: 30,
+                    block_rest: 60,
                 },
             ],
         },
@@ -196,6 +204,7 @@ export const workoutDatabase = {
                     drills: ["cat_cow", "dyn_ham_scoop", "cossack_sq"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "Power Circuit",
@@ -203,6 +212,7 @@ export const workoutDatabase = {
                     drills: ["box_jump", "rdl_heavy", "skater_hops", "russian_twist"],
                     work_sec: 40,
                     rest_sec: 50,
+                    block_rest: 60,
                 },
                 {
                     name: "Strength Finisher",
@@ -210,6 +220,7 @@ export const workoutDatabase = {
                     drills: ["goblet_sq_tempo", "plank_hold"],
                     work_sec: 50,
                     rest_sec: 30,
+                    block_rest: 60,
                 },
             ],
         },
@@ -222,6 +233,7 @@ export const workoutDatabase = {
                     drills: ["hip_opener", "dyn_ham_scoop", "cossack_sq"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "Circuit",
@@ -229,6 +241,7 @@ export const workoutDatabase = {
                     drills: ["leg_press_sl", "nordic_drop", "skater_hops", "pallof_press"],
                     work_sec: 45,
                     rest_sec: 45,
+                    block_rest: 60,
                 },
                 {
                     name: "Core Burn",
@@ -236,6 +249,7 @@ export const workoutDatabase = {
                     drills: ["dead_bug", "russian_twist"],
                     work_sec: 50,
                     rest_sec: 10,
+                    block_rest: 60,
                 },
             ],
         },
@@ -248,6 +262,7 @@ export const workoutDatabase = {
                     drills: ["cat_cow", "cossack_sq"],
                     work_sec: 45,
                     rest_sec: 15,
+                    block_rest: 30,
                 },
                 {
                     name: "Endurance Block",
@@ -255,6 +270,7 @@ export const workoutDatabase = {
                     drills: ["bosu_squat", "nordic_drop", "skater_hops", "bird_dog"],
                     work_sec: 50,
                     rest_sec: 30,
+                    block_rest: 60,
                 },
             ],
         },
