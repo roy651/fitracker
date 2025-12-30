@@ -67,7 +67,7 @@ function ProgressRing({ progress, size = 280, strokeWidth = 12 }) {
 }
 
 // Exercise Visual Component - displays the exercise illustration
-function ExerciseVisual({ exerciseId, exerciseName }) {
+function ExerciseVisual({ exerciseId, exerciseName, sizeClass = "w-56 h-56", iconSizeClass = "w-12 h-12" }) {
     const imageSrc = getExerciseImage(exerciseId);
 
     return (
@@ -76,12 +76,12 @@ function ExerciseVisual({ exerciseId, exerciseName }) {
                 <img
                     src={imageSrc}
                     alt={exerciseName}
-                    className="w-32 h-32 object-contain rounded-lg"
+                    className={`${sizeClass} object-contain rounded-lg`}
                     style={{ filter: 'invert(1) brightness(0.9)' }}
                 />
             ) : (
-                <div className="w-32 h-32 flex items-center justify-center bg-slate-800/50 rounded-lg">
-                    <Dumbbell className="w-12 h-12 text-slate-500" />
+                <div className={`${sizeClass} flex items-center justify-center bg-slate-800/50 rounded-lg`}>
+                    <Dumbbell className={`${iconSizeClass} text-slate-500`} />
                 </div>
             )}
         </div>
@@ -505,7 +505,7 @@ export default function WorkoutPlayer({ workout, onExit }) {
 
                 {/* Timer ring */}
                 <div className="relative mb-4">
-                    <ProgressRing progress={progress} size={260} strokeWidth={10} />
+                    <ProgressRing progress={progress} size={340} strokeWidth={10} />
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         {isWorkStep ? (
                             <ExerciseVisual
@@ -543,11 +543,21 @@ export default function WorkoutPlayer({ workout, onExit }) {
                             <p className="text-slate-500 text-sm mb-2">{currentStep.blockName} complete</p>
                         )}
                         {currentStep.nextExercise && (
-                            <p className="text-slate-400 flex items-center justify-center gap-2">
-                                <span>Next:</span>
-                                <span className="text-sky-400 font-medium">{currentStep.nextExercise}</span>
-                                <ChevronRight className="w-4 h-4 text-sky-400" />
-                            </p>
+                            <div className="flex flex-col items-center gap-3 mt-4">
+                                <div className="text-slate-400 text-sm">Next Up:</div>
+                                {currentStep.nextExerciseId && (
+                                    <ExerciseVisual
+                                        exerciseId={currentStep.nextExerciseId}
+                                        exerciseName={currentStep.nextExercise}
+                                        sizeClass="w-24 h-24"
+                                        iconSizeClass="w-8 h-8"
+                                    />
+                                )}
+                                <p className="text-sky-400 font-medium flex items-center justify-center gap-1">
+                                    {currentStep.nextExercise}
+                                    <ChevronRight className="w-4 h-4" />
+                                </p>
+                            </div>
                         )}
                     </div>
                 )}

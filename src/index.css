@@ -199,7 +199,7 @@ html, body {
 }
 
 .progress-ring-circle {
-  transition: stroke-dashoffset 0.3s ease;
+  /* Removed transition to allow smooth frame-by-frame updates from React */
 }
 
 /* Timer Display */

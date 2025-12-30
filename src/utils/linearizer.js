@@ -82,9 +82,13 @@ export function linearizeWorkout(template) {
                         blockIndex,
                         round,
                         totalRounds: rounds,
+                        nextExerciseId: isLastDrillOfRound ? drills[0] : drills[drillIndex + 1],
                         nextExercise: isLastDrillOfRound
                             ? getExercise(drills[0])?.name
                             : getExercise(drills[drillIndex + 1])?.name,
+                        nextVisualRef: isLastDrillOfRound
+                            ? getExercise(drills[0])?.visual_ref
+                            : getExercise(drills[drillIndex + 1])?.visual_ref,
                         isRoundTransition: isLastDrillOfRound,
                     });
                 }
@@ -104,7 +108,9 @@ export function linearizeWorkout(template) {
                 duration: block.block_rest,
                 blockName,
                 blockIndex,
+                nextExerciseId: nextBlockFirstDrill || null,
                 nextExercise: nextExerciseData?.name || nextBlockFirstDrill || null,
+                nextVisualRef: nextExerciseData?.visual_ref || null,
             });
         }
     });

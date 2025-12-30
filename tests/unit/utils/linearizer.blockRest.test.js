@@ -138,6 +138,9 @@ describe('Linearizer Block Rest Logic', () => {
         // nextExercise should be the first drill of Block 2 (drill2)
         // Since getExercise returns null for unknown IDs, linearizer uses drillId as name fallback
         expect(blockRestSteps[0].nextExercise).toBe("drill2");
+        expect(blockRestSteps[0].nextExerciseId).toBe("drill2");
+        // Visual ref will be null since drill2 is not in the actual exercise database
+        expect(blockRestSteps[0].nextVisualRef).toBeNull();
     });
 
     it('should NOT have BLOCK_REST before WORKOUT_COMPLETE (last block never gets BLOCK_REST)', () => {
