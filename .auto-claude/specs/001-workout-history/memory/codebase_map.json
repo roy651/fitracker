@@ -9,7 +9,12 @@
       "description": "Reusable confirmation dialog component for destructive actions. Props: isOpen, title, message, confirmText, cancelText, onConfirm, onCancel, variant (danger/warning). Uses modal overlay pattern with animate-fade-in/slide-up, click-outside-to-dismiss, and btn-danger/btn-accent styling based on variant.",
       "category": "component",
       "discovered_at": "2025-12-31T10:58:59.960675+00:00"
+    },
+    "src/components/HistoryView.jsx": {
+      "description": "HistoryView component displays workout history in a modal overlay. Props: isOpen, history, onClose, onDelete, onClearAll. Features: table-style display with glass-card rows, date/workout name/duration columns, empty state message, delete per entry with confirmation, Clear All with confirmation. Uses ConfirmDialog for destructive actions and formatTime from linearizer.js for duration formatting.",
+      "category": "component",
+      "discovered_at": "2025-12-31T11:02:45.138037+00:00"
     }
   },
-  "last_updated": "2025-12-31T10:58:59.960682+00:00"
+  "last_updated": "2025-12-31T11:02:45.138046+00:00"
 }
