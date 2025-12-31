@@ -144,7 +144,9 @@
               "Settings opens program selector (existing behavior preserved)"
             ]
           },
-          "status": "pending"
+          "status": "completed",
+          "notes": "Updated Dashboard.jsx to replace Settings button with MenuDropdown. Added imports for MenuDropdown, HistoryView, useWorkoutHistory. Added showMenu and showHistory state variables. MenuDropdown is positioned relatively to the button trigger with proper dropdown behavior. HistoryView modal receives history data from useWorkoutHistory hook with delete and clearAll callbacks. Settings option in dropdown opens the existing program selector (behavior preserved). History option opens the new HistoryView modal.",
+          "updated_at": "2025-12-31T11:05:21.062254+00:00"
         },
         {
           "id": "subtask-3-2",
@@ -160,7 +162,9 @@
             "type": "manual",
             "instructions": "1. Start a workout, 2. Complete or skip to end, 3. Check localStorage for 'workout_history' key, 4. Verify entry was added"
           },
-          "status": "pending"
+          "status": "completed",
+          "notes": "Implemented workout history saving on completion. Added useWorkoutHistory hook import, workoutSavedRef to prevent duplicate saves, effect to save workout when reaching WORKOUT_COMPLETE step, and reset logic in restartWorkout. Commit: 9184068",
+          "updated_at": "2025-12-31T11:08:04.105566+00:00"
         },
         {
           "id": "subtask-3-3",
@@ -181,7 +185,9 @@
               "Workout completion saves to history"
             ]
           },
-          "status": "pending"
+          "status": "completed",
+          "notes": "Updated App.jsx to pass weekKey and day to WorkoutPlayer by merging them into the workout object. This enables complete context (weekKey, day) to be saved with workout history entries. Both Dashboard and WorkoutPlayer use their own instances of useWorkoutHistory hook - Dashboard for viewing/managing history, WorkoutPlayer for saving completed workouts. Commit: c4b2115",
+          "updated_at": "2025-12-31T11:10:51.926769+00:00"
         }
       ]
     },
@@ -393,5 +399,5 @@
     }
   },
   "qa_signoff": null,
-  "last_updated": "2025-12-31T11:02:36.962462+00:00"
+  "last_updated": "2025-12-31T11:10:51.926777+00:00"
 }

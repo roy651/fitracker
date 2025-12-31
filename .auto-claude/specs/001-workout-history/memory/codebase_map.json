@@ -14,7 +14,17 @@
       "description": "HistoryView component displays workout history in a modal overlay. Props: isOpen, history, onClose, onDelete, onClearAll. Features: table-style display with glass-card rows, date/workout name/duration columns, empty state message, delete per entry with confirmation, Clear All with confirmation. Uses ConfirmDialog for destructive actions and formatTime from linearizer.js for duration formatting.",
       "category": "component",
       "discovered_at": "2025-12-31T11:02:45.138037+00:00"
+    },
+    "src/components/WorkoutPlayer.jsx": {
+      "description": "WorkoutPlayer saves workout history on completion using useWorkoutHistory hook. Uses workoutSavedRef to prevent duplicate saves, resets on restart. Saves workoutName, duration (rounded), and optional weekKey/day from workout object.",
+      "category": "integration",
+      "discovered_at": "2025-12-31T11:08:04.141025+00:00"
+    },
+    "src/App.jsx": {
+      "description": "App.jsx passes workout object to WorkoutPlayer with weekKey and day merged in. currentWorkout stores { weekKey, day, workout } separately, but WorkoutPlayer receives a single merged workout object. This enables WorkoutPlayer to access workout.weekKey and workout.day when saving history entries.",
+      "category": "architecture",
+      "discovered_at": "2025-12-31T11:10:51.962342+00:00"
     }
   },
-  "last_updated": "2025-12-31T11:02:45.138046+00:00"
+  "last_updated": "2025-12-31T11:10:51.962349+00:00"
 }
