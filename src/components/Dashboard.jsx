@@ -9,7 +9,7 @@ import {
     Snowflake,
     Zap,
     Target,
-    Settings,
+    Menu,
     X,
 } from "lucide-react";
 import {
@@ -115,13 +115,13 @@ export default function Dashboard({ onStartWorkout }) {
             <header className="text-center mb-6 animate-fade-in">
                 <div className="flex items-center justify-between mb-2">
                     {/* Menu Button (Left) */}
-                    <div className="relative">
+                    <div className="relative z-50">
                         <button
                             onClick={() => setShowMenu(!showMenu)}
                             className="p-2 rounded-lg hover:bg-slate-800/60 transition-colors"
                             aria-label="Menu"
                         >
-                            <Settings className="w-5 h-5 text-slate-400" />
+                            <Menu className="w-5 h-5 text-slate-400" />
                         </button>
                         <MenuDropdown
                             isOpen={showMenu}
