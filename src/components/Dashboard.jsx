@@ -9,7 +9,7 @@ import {
     Snowflake,
     Zap,
     Target,
-    Settings,
+    Menu,
     X,
 } from "lucide-react";
 import {
@@ -18,7 +18,10 @@ import {
 } from "../data/workoutDatabase";
 import { getWorkoutSummary, formatTime } from "../utils/linearizer";
 import { useProgramSelection } from "../hooks/useProgramSelection";
+import useWorkoutHistory from "../hooks/useWorkoutHistory";
 import ProgramSelector from "./ProgramSelector";
+import MenuDropdown from "./MenuDropdown";
+import HistoryView from "./HistoryView";
 
 // Week display names - Unused but kept for reference if needed? No, delete to satisfy lint.
 // const weekLabels = { ... };
@@ -58,7 +61,10 @@ const dayDescriptions = {
 
 export default function Dashboard({ onStartWorkout }) {
     const { selectedProgram, setSelectedProgram, availablePrograms } = useProgramSelection();
+    const { history, deleteWorkout, clearHistory } = useWorkoutHistory();
     const [showProgramSelector, setShowProgramSelector] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
+    const [showHistory, setShowHistory] = useState(false);
 
     // Use program's schedule for week keys
     const weekKeys = selectedProgram?.schedule ? Object.keys(selectedProgram.schedule) : [];
@@ -106,16 +112,24 @@ export default function Dashboard({ onStartWorkout }) {
     return (
         <div className="min-h-screen flex flex-col p-4 pb-8 safe-bottom safe-top">
             {/* Header */}
-            <header className="text-center mb-6 animate-fade-in">
+            <header className="text-center mb-6 animate-fade-in z-50">
                 <div className="flex items-center justify-between mb-2">
-                    {/* Settings Button (Left) */}
-                    <button
-                        onClick={() => setShowProgramSelector(true)}
-                        className="p-2 rounded-lg hover:bg-slate-800/60 transition-colors"
-                        aria-label="Settings"
-                    >
-                        <Settings className="w-5 h-5 text-slate-400" />
-                    </button>
+                    {/* Menu Button (Left) */}
+                    <div className="relative z-50">
+                        <button
+                            onClick={() => setShowMenu(!showMenu)}
+                            className="p-2 rounded-lg hover:bg-slate-800/60 transition-colors"
+                            aria-label="Menu"
+                        >
+                            <Menu className="w-5 h-5 text-slate-400" />
+                        </button>
+                        <MenuDropdown
+                            isOpen={showMenu}
+                            onClose={() => setShowMenu(false)}
+                            onSelectSettings={() => setShowProgramSelector(true)}
+                            onSelectHistory={() => setShowHistory(true)}
+                        />
+                    </div>
 
                     {/* Title (Center) */}
                     <div className="flex-1">
@@ -352,6 +366,15 @@ export default function Dashboard({ onStartWorkout }) {
                     </div>
                 </div>
             )}
+
+            {/* History View Modal */}
+            <HistoryView
+                isOpen={showHistory}
+                history={history}
+                onClose={() => setShowHistory(false)}
+                onDelete={deleteWorkout}
+                onClearAll={clearHistory}
+            />
         </div>
     );
 }

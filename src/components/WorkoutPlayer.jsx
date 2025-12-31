@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import VoiceToggle from "./VoiceToggle";
 import useVoicePreference from "../hooks/useVoicePreference";
+import useWorkoutHistory from "../hooks/useWorkoutHistory";
 import { linearizeWorkout, StepType, formatTime, calculateTotalDuration } from "../utils/linearizer";
 import { audioManager } from "../utils/audioManager";
 import speechService from "../services/speechService";
@@ -163,9 +164,11 @@ export default function WorkoutPlayer({ workout, onExit }) {
     const [elapsedTotal, setElapsedTotal] = useState(0);
     const [audioEnabled, setAudioEnabled] = useState(true);
     const { isEnabled: voiceEnabled, toggle: toggleVoice, isSupported: voiceSupported } = useVoicePreference();
+    const { addWorkout } = useWorkoutHistory();
 
     // Refs
     const timerRef = useRef(null);
+    const workoutSavedRef = useRef(false);
     const lastTickRef = useRef(0);
     // Initialize lastTickRef on mount (impure to do in render)
     useEffect(() => {
@@ -229,6 +232,7 @@ export default function WorkoutPlayer({ workout, onExit }) {
     // Restart workout
     const restartWorkout = useCallback(() => {
         isTransitioningRef.current = false;
+        workoutSavedRef.current = false;
         if (timerRef.current) {
             cancelAnimationFrame(timerRef.current);
             timerRef.current = null;
@@ -393,6 +397,19 @@ export default function WorkoutPlayer({ workout, onExit }) {
             wakeLockService.release();
         };
     }, []);
+
+    // Save workout to history when complete
+    useEffect(() => {
+        if (currentStep?.type === StepType.WORKOUT_COMPLETE && !workoutSavedRef.current) {
+            workoutSavedRef.current = true;
+            addWorkout({
+                workoutName: workout.name,
+                duration: Math.round(elapsedTotal),
+                ...(workout.weekKey && { weekKey: workout.weekKey }),
+                ...(workout.day && { day: workout.day }),
+            });
+        }
+    }, [currentStep?.type, workout.name, workout.weekKey, workout.day, elapsedTotal, addWorkout]);
 
     // Render based on step type
     if (!currentStep) {
