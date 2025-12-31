@@ -1,0 +1,97 @@
+{
+  "project_root": "/Users/royabitbol/Development/private/fitracker",
+  "project_type": "single",
+  "services": {
+    "main": {
+      "name": "main",
+      "path": "/Users/royabitbol/Development/private/fitracker",
+      "language": "JavaScript",
+      "framework": "React",
+      "type": "frontend",
+      "package_manager": "npm",
+      "default_port": 5173,
+      "test_command": "npm run test:unit -- --run",
+      "e2e_command": "npm run test:e2e",
+      "lint_command": "npm run lint",
+      "build_tool": "Vite",
+      "styling": "Tailwind CSS",
+      "dev_command": "npm run dev",
+      "key_directories": {
+        "src": {
+          "path": "src",
+          "purpose": "Source code"
+        },
+        "tests": {
+          "path": "tests",
+          "purpose": "Tests"
+        }
+      },
+      "entry_point": "src/App.jsx",
+      "dependencies": [
+        "lucide-react",
+        "prop-types",
+        "react",
+        "react-dom"
+      ],
+      "dev_dependencies": [
+        "@eslint/js",
+        "@faker-js/faker",
+        "@playwright/test",
+        "@tailwindcss/vite",
+        "@testing-library/jest-dom",
+        "@testing-library/react",
+        "@types/react",
+        "@types/react-dom",
+        "@vitejs/plugin-react",
+        "cross-env"
+      ],
+      "testing": "Vitest",
+      "e2e_testing": "Playwright",
+      "test_directory": "tests",
+      "environment": {
+        "variables": {
+          "TEST_ENV": {
+            "value": "local",
+            "source": ".env",
+            "type": "string",
+            "sensitive": false,
+            "required": true
+          },
+          "BASE_URL": {
+            "value": "http://localhost:5173",
+            "source": ".env",
+            "type": "url",
+            "sensitive": false,
+            "required": true
+          },
+          "FEATURE_FLAG_VOICE_COACH": {
+            "value": "true",
+            "source": ".env",
+            "type": "boolean",
+            "sensitive": false,
+            "required": true
+          },
+          "FEATURE_FLAG_WAKE_LOCK": {
+            "value": "true",
+            "source": ".env",
+            "type": "boolean",
+            "sensitive": false,
+            "required": true
+          }
+        },
+        "required_count": 4,
+        "optional_count": 0,
+        "detected_count": 4
+      }
+    }
+  },
+  "infrastructure": {
+    "ci": "GitHub Actions",
+    "ci_workflows": [
+      "deploy.yml"
+    ]
+  },
+  "conventions": {
+    "js_linting": "ESLint"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "task_description": "Add workout history for completed workouts. The UI should show a button (possibly part of the top menu button which is currently only setting) to open a menu with 2 options - setting and history.\nThe history should show a table with dates, workout completed and duration. History should be saved in local storage. History should allow the user to delete specific workouts or clear all, with a proper warning.",
+  "workflow_type": "feature"
+}

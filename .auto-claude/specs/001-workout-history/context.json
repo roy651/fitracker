@@ -1,0 +1,85 @@
+{
+  "task_description": "Add workout history for completed workouts. The UI should show a button (possibly part of the top menu button which is currently only setting) to open a menu with 2 options - setting and history. The history should show a table with dates, workout completed and duration. History should be saved in local storage. History should allow the user to delete specific workouts or clear all, with a proper warning.",
+  "scoped_services": ["frontend"],
+  "files_to_modify": {
+    "frontend": [
+      "src/components/Dashboard.jsx",
+      "src/components/WorkoutPlayer.jsx"
+    ]
+  },
+  "files_to_create": {
+    "frontend": [
+      "src/hooks/useWorkoutHistory.js",
+      "src/components/HistoryView.jsx",
+      "src/components/ConfirmDialog.jsx",
+      "src/components/MenuDropdown.jsx",
+      "tests/unit/hooks/useWorkoutHistory.test.js",
+      "tests/unit/components/HistoryView.test.jsx",
+      "tests/e2e/history.spec.js"
+    ]
+  },
+  "files_to_reference": [
+    "src/hooks/useVoicePreference.js",
+    "src/components/Dashboard.jsx",
+    "src/components/WorkoutPlayer.jsx",
+    "tests/unit/hooks/useVoicePreference.test.js",
+    "tests/e2e/smoke.spec.js"
+  ],
+  "patterns": {
+    "localStorage_hook": {
+      "file": "src/hooks/useVoicePreference.js",
+      "description": "STORAGE_KEY constant, load in useEffect with try/catch JSON.parse, useCallback for handlers, return { state, handlers }"
+    },
+    "modal_overlay": {
+      "file": "src/components/Dashboard.jsx",
+      "lines": "331-354",
+      "description": "fixed inset-0 z-50 bg-black/70 animate-fade-in backdrop, e.stopPropagation() on content, animate-slide-up"
+    },
+    "settings_button": {
+      "file": "src/components/Dashboard.jsx",
+      "lines": "111-118",
+      "description": "Simple button with Settings icon, onClick opens program selector. Needs conversion to dropdown menu"
+    },
+    "workout_completion": {
+      "file": "src/components/WorkoutPlayer.jsx",
+      "lines": "117-124",
+      "description": "WorkoutCompleteScreen component with useEffect hook, has workoutName and totalTime (elapsedTotal)"
+    },
+    "test_unit_hook": {
+      "file": "tests/unit/hooks/useVoicePreference.test.js",
+      "description": "Vitest + @testing-library/react renderHook pattern with localStorage mocking"
+    },
+    "test_e2e": {
+      "file": "tests/e2e/smoke.spec.js",
+      "description": "Playwright with custom fixtures, page.goto('/') pattern"
+    }
+  },
+  "existing_implementations": {
+    "localStorage_usage": "useVoicePreference.js uses 'ski_prep_user_prefs' key for voice settings",
+    "workout_completion_tracking": "WorkoutPlayer.jsx already tracks 'workout_completed_count' in localStorage (line 122-123)",
+    "icons": "lucide-react icons used throughout (Settings, X, History available)",
+    "styling": "Tailwind CSS with glass-card, btn, btn-primary, btn-secondary, btn-danger classes"
+  },
+  "data_structure": {
+    "workout_record": {
+      "id": "unique identifier (timestamp-based)",
+      "date": "ISO date string",
+      "workoutName": "string from workout.name",
+      "duration": "number in seconds from elapsedTotal",
+      "weekKey": "optional week identifier",
+      "day": "optional day identifier"
+    },
+    "storage_key": "workout_history"
+  },
+  "tech_stack": {
+    "framework": "React 19 + Vite",
+    "styling": "Tailwind CSS",
+    "icons": "lucide-react",
+    "testing_unit": "Vitest + @testing-library/react",
+    "testing_e2e": "Playwright",
+    "dev_port": 5173,
+    "entry": "src/App.jsx"
+  },
+  "created_at": "2025-12-31T12:46:44.405560",
+  "updated_at": "2025-12-31T13:00:00.000000"
+}

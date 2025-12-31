@@ -1,0 +1,94 @@
+{
+  "complexity": "standard",
+  "workflow_type": "feature",
+  "confidence": 0.85,
+  "reasoning": "Standard feature adding workout history tracking. Requires modifying the existing settings button to become a menu, creating a new history view component, and a localStorage hook. All patterns exist in the codebase (modal UI, localStorage hooks, table-like displays). No external integrations or infrastructure changes needed.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 5,
+      "estimated_services": 1,
+      "is_cross_cutting": false,
+      "notes": "Changes localized to: Dashboard.jsx (menu), WorkoutPlayer.jsx (save history), new HistoryView.jsx component, new useWorkoutHistory.js hook, possibly App.jsx for data flow"
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": [],
+      "research_needed": false,
+      "notes": "Uses only browser localStorage API which is already in use in the codebase"
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": false,
+      "notes": "No infrastructure changes - pure frontend feature using browser storage"
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": false,
+      "unfamiliar_tech": [],
+      "notes": "All patterns exist: localStorage hook (useVoicePreference.js), modal/overlay UI (ProgramSelector modal in Dashboard.jsx), workout data structure (WorkoutCompleteScreen already has workoutName/totalTime)"
+    },
+    "risk": {
+      "level": "low",
+      "concerns": [
+        "Destructive actions need confirmation dialogs",
+        "localStorage has size limits (~5MB) but workout history is small data"
+      ],
+      "notes": "Low risk feature addition. Main UX consideration is proper confirmation for delete actions."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "requirements",
+    "context",
+    "spec_writing",
+    "planning",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": false,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "minimal_mode": false,
+    "test_types_required": ["unit", "integration"],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Medium risk due to data persistence (localStorage) and destructive operations (delete history). Requires unit tests for the history hook logic and integration tests for the save/delete/clear workflow. No security concerns as no auth or sensitive data is involved."
+  },
+
+  "key_findings": {
+    "existing_patterns": {
+      "localStorage": "useVoicePreference.js uses STORAGE_KEY pattern with JSON.parse/stringify",
+      "modal_ui": "Dashboard.jsx has ProgramSelector modal with backdrop, animation, and close handling",
+      "workout_completion": "WorkoutPlayer.jsx WorkoutCompleteScreen already has access to workoutName and totalTime (elapsedTotal)",
+      "icons": "Uses lucide-react icons throughout",
+      "styling": "Tailwind CSS with glass-card, btn classes"
+    },
+    "files_to_modify": [
+      "src/components/Dashboard.jsx - Convert settings button to dropdown menu",
+      "src/components/WorkoutPlayer.jsx - Save workout on completion"
+    ],
+    "files_to_create": [
+      "src/components/HistoryView.jsx - Table view with workout history",
+      "src/hooks/useWorkoutHistory.js - localStorage management hook"
+    ],
+    "data_structure": {
+      "workout_record": {
+        "id": "unique identifier (timestamp-based)",
+        "date": "ISO date string",
+        "workoutName": "string from workout.name",
+        "duration": "number in seconds from elapsedTotal"
+      }
+    }
+  },
+
+  "created_at": "2025-12-31T12:50:00.000Z"
+}

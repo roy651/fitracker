@@ -1,0 +1,15 @@
+{
+  "discovered_files": {
+    "src/hooks/useWorkoutHistory.js": {
+      "description": "Custom hook for workout history localStorage management. Uses STORAGE_KEY='workout_history', stores array of entries with { id, date, workoutName, duration, weekKey?, day? }. Provides history, addWorkout, deleteWorkout, clearHistory. Entries sorted newest first.",
+      "category": "hook",
+      "discovered_at": "2025-12-31T10:56:44.566786+00:00"
+    },
+    "src/components/ConfirmDialog.jsx": {
+      "description": "Reusable confirmation dialog component for destructive actions. Props: isOpen, title, message, confirmText, cancelText, onConfirm, onCancel, variant (danger/warning). Uses modal overlay pattern with animate-fade-in/slide-up, click-outside-to-dismiss, and btn-danger/btn-accent styling based on variant.",
+      "category": "component",
+      "discovered_at": "2025-12-31T10:58:59.960675+00:00"
+    }
+  },
+  "last_updated": "2025-12-31T10:58:59.960682+00:00"
+}

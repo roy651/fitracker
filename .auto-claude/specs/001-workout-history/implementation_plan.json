@@ -1,0 +1,395 @@
+{
+  "feature": "Workout History",
+  "workflow_type": "feature",
+  "workflow_rationale": "New feature addition with UI components, localStorage hook, and integration into existing components. Follows standard feature workflow: infrastructure \u2192 UI \u2192 integration \u2192 testing.",
+  "created_at": "2025-12-31T10:36:18.851Z",
+  "updated_at": "2025-12-31T13:00:00.000Z",
+  "status": "planning",
+  "planStatus": "complete",
+  "phases": [
+    {
+      "id": "phase-1-infrastructure",
+      "name": "Core Infrastructure",
+      "type": "implementation",
+      "description": "Create the core hook for localStorage management and reusable confirmation dialog",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create useWorkoutHistory hook for localStorage management",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/hooks/useWorkoutHistory.js"
+          ],
+          "patterns_from": [
+            "src/hooks/useVoicePreference.js"
+          ],
+          "implementation_notes": "Follow useVoicePreference pattern: STORAGE_KEY='workout_history', useEffect with try/catch JSON.parse, useCallback handlers for addWorkout, deleteWorkout, clearAll. Data structure: { id, date, workoutName, duration, weekKey?, day? }",
+          "verification": {
+            "type": "command",
+            "command": "npm run test:unit -- --run tests/unit/hooks/useWorkoutHistory.test.js",
+            "expected": "Tests pass (will be added in phase 4)"
+          },
+          "status": "completed",
+          "notes": "Created useWorkoutHistory hook following patterns from useVoicePreference.js. Implements: localStorage persistence with STORAGE_KEY='workout_history', useEffect loading with try/catch JSON.parse and corrupted data recovery, useCallback handlers for addWorkout, deleteWorkout, clearHistory. Data structure matches spec: { id, date, workoutName, duration, weekKey?, day? }. Entries sorted newest first.",
+          "updated_at": "2025-12-31T10:56:39.181985+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Create reusable ConfirmDialog component",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/components/ConfirmDialog.jsx"
+          ],
+          "patterns_from": [
+            "src/components/Dashboard.jsx"
+          ],
+          "implementation_notes": "Follow modal overlay pattern from Dashboard.jsx lines 331-354. Props: isOpen, title, message, confirmText, cancelText, onConfirm, onCancel, variant (danger/warning). Use btn-danger for destructive confirm actions.",
+          "verification": {
+            "type": "command",
+            "command": "node -e \"require('./src/components/ConfirmDialog.jsx')\" 2>&1 || echo 'OK - ESM module'",
+            "expected": "File exists and exports component"
+          },
+          "status": "completed",
+          "notes": "Created ConfirmDialog component following patterns from Dashboard.jsx modal overlay and ProgramSelector.jsx PropTypes. Features: modal overlay with bg-black/70 backdrop, click outside to dismiss, animate-fade-in/animate-slide-up animations, AlertTriangle icon, support for danger/warning variants, btn-danger for destructive confirm actions, PropTypes validation for all props.",
+          "updated_at": "2025-12-31T10:58:47.171083+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-ui-components",
+      "name": "UI Components",
+      "type": "implementation",
+      "description": "Create the dropdown menu and history view components",
+      "depends_on": [
+        "phase-1-infrastructure"
+      ],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Create MenuDropdown component for Settings/History options",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/components/MenuDropdown.jsx"
+          ],
+          "patterns_from": [
+            "src/components/Dashboard.jsx"
+          ],
+          "implementation_notes": "Dropdown triggered by Settings button. Options: Settings (existing), History (new). Use relative positioning, bg-slate-800/90 backdrop, rounded-xl, animate-fade-in. Click outside to close. Props: isOpen, onClose, onSelectSettings, onSelectHistory",
+          "verification": {
+            "type": "command",
+            "command": "grep -l 'MenuDropdown' src/components/MenuDropdown.jsx && echo 'Component created'",
+            "expected": "Component created"
+          },
+          "status": "completed",
+          "notes": "Created MenuDropdown component with Settings and History options. Features: relative positioning with backdrop blur (bg-slate-800/95), click outside to close using useRef and useEffect, animate-fade-in animation, PropTypes validation. Follows patterns from Dashboard.jsx and ProgramSelector.jsx.",
+          "updated_at": "2025-12-31T11:00:50.181109+00:00"
+        },
+        {
+          "id": "subtask-2-2",
+          "description": "Create HistoryView component with table display",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "src/components/HistoryView.jsx"
+          ],
+          "patterns_from": [
+            "src/components/Dashboard.jsx",
+            "src/components/ProgramSelector.jsx"
+          ],
+          "implementation_notes": "Full-screen modal overlay. Table columns: Date (formatted), Workout Name, Duration (use formatTime from linearizer.js). Each row has delete button. Header has 'Clear All' button. Empty state with friendly message. Use ConfirmDialog for delete confirmations. Props: isOpen, history, onClose, onDelete, onClearAll. Import { Trash2, History, X } from lucide-react.",
+          "verification": {
+            "type": "command",
+            "command": "grep -l 'HistoryView' src/components/HistoryView.jsx && echo 'Component created'",
+            "expected": "Component created"
+          },
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-integration",
+      "name": "Integration",
+      "type": "integration",
+      "description": "Integrate new components into existing Dashboard and WorkoutPlayer",
+      "depends_on": [
+        "phase-2-ui-components"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "Update Dashboard.jsx - Replace Settings button with MenuDropdown",
+          "service": "frontend",
+          "files_to_modify": [
+            "src/components/Dashboard.jsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "implementation_notes": "1. Import MenuDropdown, HistoryView, useWorkoutHistory. 2. Add state: showMenu, showHistory. 3. Replace Settings button (lines 111-118) with MenuDropdown trigger. 4. Add MenuDropdown and HistoryView modals. 5. Wire up onSelectSettings to existing setShowProgramSelector, onSelectHistory to setShowHistory. 6. Pass history data from useWorkoutHistory to HistoryView.",
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:5173",
+            "checks": [
+              "Settings button shows dropdown on click",
+              "Dropdown has Settings and History options",
+              "History opens history view",
+              "Settings opens program selector (existing behavior preserved)"
+            ]
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-3-2",
+          "description": "Update WorkoutPlayer.jsx - Save workout on completion",
+          "service": "frontend",
+          "files_to_modify": [
+            "src/components/WorkoutPlayer.jsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "implementation_notes": "1. Accept onWorkoutComplete callback prop. 2. In WorkoutCompleteScreen useEffect (line 118-124), call onWorkoutComplete with { workoutName: currentStep.workoutName, duration: elapsedTotal, date: new Date().toISOString() }. 3. Update App.jsx to pass addWorkout from useWorkoutHistory as onWorkoutComplete prop.",
+          "verification": {
+            "type": "manual",
+            "instructions": "1. Start a workout, 2. Complete or skip to end, 3. Check localStorage for 'workout_history' key, 4. Verify entry was added"
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-3-3",
+          "description": "Update App.jsx - Wire up useWorkoutHistory and pass to components",
+          "service": "frontend",
+          "files_to_modify": [
+            "src/App.jsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "implementation_notes": "1. Import useWorkoutHistory hook. 2. Initialize at App level: const { history, addWorkout, deleteWorkout, clearHistory } = useWorkoutHistory(). 3. Pass addWorkout to WorkoutPlayer via onWorkoutComplete prop. 4. Pass history, deleteWorkout, clearHistory to Dashboard as props (or lift state management to Dashboard).",
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:5173",
+            "checks": [
+              "App loads without errors",
+              "Console shows no errors",
+              "Workout completion saves to history"
+            ]
+          },
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-testing",
+      "name": "Testing",
+      "type": "implementation",
+      "description": "Add unit and E2E tests for the new functionality",
+      "depends_on": [
+        "phase-3-integration"
+      ],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "description": "Create unit tests for useWorkoutHistory hook",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "tests/unit/hooks/useWorkoutHistory.test.js"
+          ],
+          "patterns_from": [
+            "tests/unit/hooks/useVoicePreference.test.js"
+          ],
+          "implementation_notes": "Follow useVoicePreference.test.js pattern. Test: initial empty state, load from localStorage, addWorkout adds entry, deleteWorkout removes entry by id, clearHistory clears all, corrupted localStorage recovers gracefully.",
+          "verification": {
+            "type": "command",
+            "command": "npm run test:unit -- --run tests/unit/hooks/useWorkoutHistory.test.js",
+            "expected": "All tests pass"
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-4-2",
+          "description": "Create unit tests for HistoryView component",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "tests/unit/components/HistoryView.test.jsx"
+          ],
+          "patterns_from": [
+            "tests/unit/components/VoiceToggle.test.jsx"
+          ],
+          "implementation_notes": "Test: renders empty state when no history, renders table with history items, calls onDelete when delete button clicked, calls onClearAll when clear all clicked, shows confirmation dialog before destructive actions.",
+          "verification": {
+            "type": "command",
+            "command": "npm run test:unit -- --run tests/unit/components/HistoryView.test.jsx",
+            "expected": "All tests pass"
+          },
+          "status": "pending"
+        },
+        {
+          "id": "subtask-4-3",
+          "description": "Create E2E tests for history workflow",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "tests/e2e/history.spec.js"
+          ],
+          "patterns_from": [
+            "tests/e2e/smoke.spec.js"
+          ],
+          "implementation_notes": "Test full flow: 1. Open menu dropdown, 2. Click History (verify empty state), 3. Complete a workout, 4. Open History (verify entry appears), 5. Delete entry (verify confirmation, verify removal), 6. Clear all (verify warning, verify empty state).",
+          "verification": {
+            "type": "command",
+            "command": "npm run test:e2e -- tests/e2e/history.spec.js",
+            "expected": "All E2E tests pass"
+          },
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 4,
+    "total_subtasks": 10,
+    "services_involved": [
+      "frontend"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [
+        {
+          "phases": [
+            "subtask-1-1",
+            "subtask-1-2"
+          ],
+          "reason": "Phase 1 subtasks can run in parallel - hook and dialog are independent"
+        },
+        {
+          "phases": [
+            "subtask-2-1",
+            "subtask-2-2"
+          ],
+          "reason": "Phase 2 subtasks can run in parallel - dropdown and history view are independent"
+        },
+        {
+          "phases": [
+            "subtask-4-1",
+            "subtask-4-2",
+            "subtask-4-3"
+          ],
+          "reason": "Phase 4 test subtasks can run in parallel"
+        }
+      ],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential execution recommended for this single-service feature"
+    },
+    "startup_command": "source .auto-claude/.venv/bin/activate 2>/dev/null || true && cd /Users/royabitbol/Development/private/fitracker && npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "test_creation_phase": "phase-4-testing",
+    "test_types_required": [
+      "unit",
+      "integration"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All existing tests pass",
+      "New unit tests pass for useWorkoutHistory hook",
+      "New unit tests pass for HistoryView component",
+      "E2E tests pass for history workflow",
+      "Manual verification of UI flows"
+    ],
+    "verification_steps": [
+      {
+        "name": "Lint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "lint",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Existing Unit Tests",
+        "command": "npm run test:unit -- --run",
+        "expected_outcome": "All existing tests pass",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "New Unit Tests",
+        "command": "npm run test:unit -- --run tests/unit/hooks/useWorkoutHistory.test.js tests/unit/components/HistoryView.test.jsx",
+        "expected_outcome": "All new tests pass",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "E2E Tests",
+        "command": "npm run test:e2e -- tests/e2e/history.spec.js",
+        "expected_outcome": "All E2E tests pass",
+        "type": "test",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Medium risk due to localStorage data persistence and destructive operations (delete history). Requires unit tests for hook logic and component behavior, plus E2E tests for full workflow verification."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": true,
+      "commands": [
+        "npm run test:unit -- --run"
+      ],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": true,
+      "commands": [
+        "npm run test:e2e -- tests/e2e/history.spec.js"
+      ],
+      "flows": [
+        "menu-dropdown",
+        "view-history",
+        "delete-entry",
+        "clear-all"
+      ]
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:5173/",
+          "checks": [
+            "Menu dropdown opens on Settings button click",
+            "History option opens history modal",
+            "Settings option opens program selector",
+            "History table displays completed workouts",
+            "Delete button shows confirmation",
+            "Clear all button shows warning",
+            "Empty state shows friendly message"
+          ]
+        }
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    }
+  },
+  "qa_signoff": null,
+  "last_updated": "2025-12-31T11:00:50.181118+00:00"
+}
