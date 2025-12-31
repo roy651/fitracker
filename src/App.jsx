@@ -62,7 +62,11 @@ function App() {
 
       {appState === AppState.WORKOUT && currentWorkout && (
         <WorkoutPlayer
-          workout={currentWorkout.workout}
+          workout={{
+            ...currentWorkout.workout,
+            weekKey: currentWorkout.weekKey,
+            day: currentWorkout.day,
+          }}
           onExit={handleExitWorkout}
         />
       )}
