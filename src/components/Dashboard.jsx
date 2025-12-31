@@ -112,7 +112,7 @@ export default function Dashboard({ onStartWorkout }) {
     return (
         <div className="min-h-screen flex flex-col p-4 pb-8 safe-bottom safe-top">
             {/* Header */}
-            <header className="text-center mb-6 animate-fade-in">
+            <header className="text-center mb-6 animate-fade-in z-50">
                 <div className="flex items-center justify-between mb-2">
                     {/* Menu Button (Left) */}
                     <div className="relative z-50">
