@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import WorkoutPlayer from "./components/WorkoutPlayer";
+import WorkoutPreview from "./components/WorkoutPreview";
 import InstallPrompt from "./components/InstallPrompt";
 import { usePWAInstall } from "./hooks/usePWAInstall";
 import { audioManager } from "./utils/audioManager";
@@ -11,6 +12,7 @@ import "./index.css";
 // App States
 const AppState = {
   DASHBOARD: "dashboard",
+  PREVIEW: "preview",
   WORKOUT: "workout",
 };
 
@@ -29,13 +31,21 @@ function App() {
   } = usePWAInstall();
 
   const handleStartWorkout = (weekKey, day, workout) => {
-    // Initialize hardware services on user gesture (Start button click)
+    setCurrentWorkout({ weekKey, day, workout });
+    setAppState(AppState.PREVIEW);
+  };
+
+  const handleStartFromPreview = () => {
+    // Initialize hardware services on user gesture (Start Workout button click)
     audioManager.init();
     wakeLockService.init();
     speechService.init();
 
-    setCurrentWorkout({ weekKey, day, workout });
     setAppState(AppState.WORKOUT);
+  };
+
+  const handleBackFromPreview = () => {
+    setAppState(AppState.DASHBOARD);
   };
 
   const handleExitWorkout = () => {
@@ -58,6 +68,14 @@ function App() {
             shouldShowPrompt={shouldShowPrompt}
           />
         </>
+      )}
+
+      {appState === AppState.PREVIEW && currentWorkout && (
+        <WorkoutPreview
+          workout={currentWorkout.workout}
+          onBack={handleBackFromPreview}
+          onStart={handleStartFromPreview}
+        />
       )}
 
       {appState === AppState.WORKOUT && currentWorkout && (
