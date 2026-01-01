@@ -24,6 +24,32 @@ import twist from './twist.png';
 import stepUp from './step_up.png';
 import calfRaise from './calf_raise.png';
 
+// Combat Training Program Imports
+import benchPress from './bench_press.png';
+import weightedPullup from './weighted_pullup.png';
+import latPulldown from './lat_pulldown.png';
+import overheadPress from './overhead_press.png';
+import tbarRow from './tbar_row.png';
+import dumbbellRow from './dumbbell_row.png';
+import weightedPlank from './weighted_plank.png';
+import hangingLegRaise from './hanging_leg_raise.png';
+import backSquat from './back_squat.png';
+import rdlCombat from './rdl_combat.png';
+import vo2maxIntervals from './vo2max_intervals.png';
+import weightedDips from './weighted_dips.png';
+import seatedCableRow from './seated_cable_row.png';
+import declinePushup from './decline_pushup.png';
+import bicepCurl from './bicep_curl.png';
+import tricepExtension from './tricep_extension.png';
+import walkingLunge from './walking_lunge.png';
+import legExtension from './leg_extension.png';
+import legCurlMachine from './leg_curl_machine.png';
+import zone2Run from './zone2_run.png';
+import zone2RunLong from './zone2_run_long.png';
+import longWalk from './long_walk.png';
+
+
+
 /**
  * Map of exercise IDs to their illustration image paths
  */
@@ -50,6 +76,38 @@ export const exerciseImages = {
     russian_twist: twist,
     step_up: stepUp,
     calf_raise: calfRaise,
+
+
+
+    // Combat Training Program Mappings
+    bench_press: benchPress,
+    weighted_pullup: weightedPullup,
+    lat_pulldown: latPulldown,
+    overhead_press: overheadPress,
+    tbar_row: tbarRow,
+    dumbbell_row: dumbbellRow,
+    weighted_plank: weightedPlank,
+    hanging_leg_raise: hangingLegRaise,
+    back_squat: backSquat,
+    rdl_combat: rdlCombat,
+    vo2max_intervals: vo2maxIntervals,
+    weighted_dips: weightedDips,
+    seated_cable_row: seatedCableRow,
+    decline_pushup: declinePushup,
+    bicep_curl: bicepCurl,
+    tricep_extension: tricepExtension,
+    walking_lunge: walkingLunge,
+    leg_extension: legExtension,
+    leg_curl_machine: legCurlMachine,
+    zone2_run: zone2Run,
+    zone2_run_short: zone2Run,
+    zone2_run_long: zone2RunLong,
+    long_walk: longWalk,
+
+    // Mobility & Recovery Placeholders (reusing existing assets)
+    hip_mobility: hipOpener,
+    ankle_mobility: calfRaise,
+    static_stretching: hamScoop,
 };
 
 /**

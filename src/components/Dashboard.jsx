@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
     Mountain,
     Calendar,
@@ -47,16 +47,24 @@ const getPhaseInfo = (weekKey) => {
 
 // Day icons
 const dayIcons = {
+    Sunday: Calendar,
     Monday: Dumbbell,
+    Tuesday: Dumbbell,
     Wednesday: Dumbbell,
-    Thursday: Home,
+    Thursday: Home, // Keep Home for Thursday (Ski Prep)
+    Friday: Dumbbell,
+    Saturday: Home, // Active Recovery usually
 };
 
 // Day descriptions
 const dayDescriptions = {
+    Sunday: "Training Day", // Generic fallback
     Monday: "Gym Session",
+    Tuesday: "Training Day",
     Wednesday: "Gym Session",
     Thursday: "Home/BOSU",
+    Friday: "Training Day",
+    Saturday: "Active Recovery",
 };
 
 export default function Dashboard({ onStartWorkout }) {
@@ -72,15 +80,22 @@ export default function Dashboard({ onStartWorkout }) {
     const [selectedWeek, setSelectedWeek] = useState(weekKeys[0]);
     const [selectedDay, setSelectedDay] = useState(null);
 
+    // Ensure selectedWeek is set when weekKeys become available
+    useEffect(() => {
+        if (!selectedWeek && weekKeys.length > 0) {
+            setSelectedWeek(weekKeys[0]);
+        }
+    }, [weekKeys, selectedWeek]);
+
     const availableDays = useMemo(
-        () => getDaysForWeek(selectedWeek),
-        [selectedWeek]
+        () => getDaysForWeek(selectedWeek, selectedProgram?.schedule),
+        [selectedWeek, selectedProgram]
     );
 
     const selectedWorkout = useMemo(() => {
         if (!selectedDay) return null;
-        return getWorkoutTemplate(selectedWeek, selectedDay);
-    }, [selectedWeek, selectedDay]);
+        return getWorkoutTemplate(selectedWeek, selectedDay, selectedProgram?.schedule);
+    }, [selectedWeek, selectedDay, selectedProgram]);
 
     const workoutSummary = useMemo(() => {
         if (!selectedWorkout) return null;
@@ -198,7 +213,7 @@ export default function Dashboard({ onStartWorkout }) {
                     {availableDays.map((day) => {
                         const isSelected = selectedDay === day;
                         const DayIcon = dayIcons[day];
-                        const template = getWorkoutTemplate(selectedWeek, day);
+                        const template = getWorkoutTemplate(selectedWeek, day, selectedProgram?.schedule);
                         const summary = getWorkoutSummary(template);
 
                         return (
@@ -220,7 +235,7 @@ export default function Dashboard({ onStartWorkout }) {
                     ${isSelected ? "bg-sky-500/20 text-sky-400" : "bg-slate-700/50 text-slate-400"}
                   `}
                                     >
-                                        <DayIcon className="w-5 h-5" />
+                                        {DayIcon ? <DayIcon className="w-5 h-5" /> : <Dumbbell className="w-5 h-5" />}
                                     </div>
                                     <div className="text-left">
                                         <div className="font-semibold text-white">{day}</div>

@@ -39,11 +39,14 @@ const workout_templates = mergeModules(workoutModules);
 // Build programs array (each file is one program)
 const programs = Object.values(programModules).map((module) => module.default || module);
 
+// Find default program (ski-prep) for backward compatibility, or fallback to first
+const defaultProgram = programs.find((p) => p.id === 'ski-prep-6week') || programs[0];
+
 // Export unified database (backward compatible)
 export const workoutDatabase = {
     exercise_library,
     workout_templates,
-    program_schedule: programs[0]?.schedule || {}, // Default to first program for backward compat
+    program_schedule: defaultProgram?.schedule || {}, // Default to ski-prep for backward compat
     programs, // New: array of all available programs
 };
 
@@ -51,13 +54,13 @@ export const workoutDatabase = {
 export const weekKeys = Object.keys(workoutDatabase.program_schedule);
 
 // Helper to get available days for a week
-export const getDaysForWeek = (weekKey) => {
-    return Object.keys(workoutDatabase.program_schedule[weekKey]);
+export const getDaysForWeek = (weekKey, schedule = workoutDatabase.program_schedule) => {
+    return Object.keys(schedule[weekKey] || {});
 };
 
 // Helper to get workout template for a specific week and day
-export const getWorkoutTemplate = (weekKey, day) => {
-    const templateId = workoutDatabase.program_schedule[weekKey]?.[day];
+export const getWorkoutTemplate = (weekKey, day, schedule = workoutDatabase.program_schedule) => {
+    const templateId = schedule[weekKey]?.[day];
     if (!templateId) return null;
     return {
         id: templateId,

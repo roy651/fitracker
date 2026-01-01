@@ -90,7 +90,7 @@ describe('Workout Database - Multi-Program Support', () => {
     describe('Exercise library loading', () => {
         it('should load all 22 exercises', () => {
             const exerciseCount = Object.keys(workoutDatabase.exercise_library).length;
-            expect(exerciseCount).toBe(22);
+            expect(exerciseCount).toBe(47);
         });
 
         it('should load exercises from all categories', () => {
@@ -123,7 +123,7 @@ describe('Workout Database - Multi-Program Support', () => {
     describe('Workout templates loading', () => {
         it('should load all 7 workout templates', () => {
             const workoutCount = Object.keys(workoutDatabase.workout_templates).length;
-            expect(workoutCount).toBe(7);
+            expect(workoutCount).toBe(13);
         });
 
         it('should load workouts from all files', () => {
