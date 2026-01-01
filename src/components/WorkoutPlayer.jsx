@@ -68,7 +68,7 @@ function ProgressRing({ progress, size = 280, strokeWidth = 12 }) {
 }
 
 // Exercise Visual Component - displays the exercise illustration
-function ExerciseVisual({ exerciseId, exerciseName, sizeClass = "w-56 h-56", iconSizeClass = "w-12 h-12" }) {
+function ExerciseVisual({ exerciseId, exerciseName, sizeClass = "w-44 h-44", iconSizeClass = "w-10 h-10" }) {
     const imageSrc = getExerciseImage(exerciseId);
 
     return (
@@ -522,7 +522,7 @@ export default function WorkoutPlayer({ workout, onExit }) {
 
                 {/* Timer ring */}
                 <div className="relative mb-4">
-                    <ProgressRing progress={progress} size={340} strokeWidth={10} />
+                    <ProgressRing progress={progress} size={280} strokeWidth={10} />
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         {isWorkStep ? (
                             <ExerciseVisual

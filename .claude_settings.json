@@ -11,14 +11,24 @@
       "Edit(./**)",
       "Glob(./**)",
       "Grep(./**)",
+      "Read(/Users/royabitbol/Development/private/fitracker/**)",
+      "Write(/Users/royabitbol/Development/private/fitracker/**)",
+      "Edit(/Users/royabitbol/Development/private/fitracker/**)",
+      "Glob(/Users/royabitbol/Development/private/fitracker/**)",
+      "Grep(/Users/royabitbol/Development/private/fitracker/**)",
+      "Read(/Users/royabitbol/Development/private/fitracker/.auto-claude/specs/006-workout-preview/**)",
+      "Write(/Users/royabitbol/Development/private/fitracker/.auto-claude/specs/006-workout-preview/**)",
+      "Edit(/Users/royabitbol/Development/private/fitracker/.auto-claude/specs/006-workout-preview/**)",
       "Bash(*)",
-      "mcp__context7__resolve-library-id",
-      "mcp__context7__get-library-docs",
-      "mcp__graphiti-memory__search_nodes",
-      "mcp__graphiti-memory__search_facts",
-      "mcp__graphiti-memory__add_episode",
-      "mcp__graphiti-memory__get_episodes",
-      "mcp__graphiti-memory__get_entity_edge"
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__context7__resolve-library-id(*)",
+      "mcp__context7__get-library-docs(*)",
+      "mcp__graphiti-memory__search_nodes(*)",
+      "mcp__graphiti-memory__search_facts(*)",
+      "mcp__graphiti-memory__add_episode(*)",
+      "mcp__graphiti-memory__get_episodes(*)",
+      "mcp__graphiti-memory__get_entity_edge(*)"
     ]
   }
 }
