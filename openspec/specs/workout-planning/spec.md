@@ -5,9 +5,7 @@
 This specification defines the program and workout selection capabilities that allow users to choose and preview their training.
 
 ---
-
 ## Requirements
-
 ### Requirement: System SHALL support multiple workout programs
 
 Users SHALL be able to select from multiple available workout programs. The selected program SHALL persist across sessions.
@@ -38,13 +36,11 @@ Users SHALL be able to select any week within the active program's schedule. Dif
 
 **Then** the week selector SHALL highlight week 4
 
-**And** the phase banner SHALL update to "Phase 2: Power"
-
 **And** the available workouts SHALL update to Phase 2 workouts
 
 **And** the day selection SHALL reset to none
 
----
+<!-- REMOVED: **And** the phase banner SHALL update to "Phase 2: Power" -->
 
 ### Requirement: System SHALL display available training days for selected week
 

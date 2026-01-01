@@ -5,9 +5,7 @@
 This specification defines the user interface design, visual styling, animations, and accessibility features.
 
 ---
-
 ## Requirements
-
 ### Requirement: System SHALL use mobile-first responsive design
 
 The application SHALL be designed with mobile devices as the primary target, with layouts that adapt gracefully to different screen sizes.
@@ -83,8 +81,6 @@ Important UI elements SHALL use gradient backgrounds to draw attention and creat
 **And** primary buttons SHALL use animated gradient effects
 
 **And** app header SHALL use gradient text for title
-
----
 
 ### Requirement: System SHALL provide clear visual feedback for interactions
 
