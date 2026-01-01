@@ -1,0 +1,190 @@
+{
+    "combat_day1_upper_hypertrophy": {
+        "name": "Day 1: Upper Body Strength (Hypertrophy)",
+        "blocks": [
+            {
+                "name": "Chest & Shoulders",
+                "rounds": 3,
+                "drills": [
+                    "bench_press",
+                    "overhead_press"
+                ],
+                "work_sec": 45,
+                "rest_sec": 90,
+                "block_rest": 120
+            },
+            {
+                "name": "Back",
+                "rounds": 3,
+                "drills": [
+                    "weighted_pullup",
+                    "tbar_row"
+                ],
+                "work_sec": 45,
+                "rest_sec": 90,
+                "block_rest": 120
+            },
+            {
+                "name": "Core",
+                "rounds": 3,
+                "drills": [
+                    "weighted_plank",
+                    "hanging_leg_raise"
+                ],
+                "work_sec": 45,
+                "rest_sec": 45,
+                "block_rest": 60
+            }
+        ]
+    },
+    "combat_day2_lower_intervals": {
+        "name": "Day 2: Lower Body + VO2 Max Intervals",
+        "blocks": [
+            {
+                "name": "Lower Body Strength",
+                "rounds": 3,
+                "drills": [
+                    "back_squat",
+                    "rdl_combat"
+                ],
+                "work_sec": 45,
+                "rest_sec": 120,
+                "block_rest": 180
+            },
+            {
+                "name": "VO2 Max Finisher",
+                "rounds": 4,
+                "drills": [
+                    "vo2max_intervals"
+                ],
+                "work_sec": 240,
+                "rest_sec": 180,
+                "block_rest": 0
+            }
+        ]
+    },
+    "combat_day3_upper_volume": {
+        "name": "Day 3: Upper Body Volume (Secondary)",
+        "blocks": [
+            {
+                "name": "Push",
+                "rounds": 3,
+                "drills": [
+                    "weighted_dips",
+                    "decline_pushup"
+                ],
+                "work_sec": 45,
+                "rest_sec": 60,
+                "block_rest": 90
+            },
+            {
+                "name": "Pull",
+                "rounds": 3,
+                "drills": [
+                    "seated_cable_row"
+                ],
+                "work_sec": 45,
+                "rest_sec": 60,
+                "block_rest": 90
+            },
+            {
+                "name": "Arms",
+                "rounds": 2,
+                "drills": [
+                    "bicep_curl",
+                    "tricep_extension"
+                ],
+                "work_sec": 40,
+                "rest_sec": 45,
+                "block_rest": 60
+            }
+        ]
+    },
+    "combat_day4_lower_explosive": {
+        "name": "Day 4: Explosive Lower Body + Muscle Endurance",
+        "blocks": [
+            {
+                "name": "Functional Movement",
+                "rounds": 3,
+                "drills": [
+                    "walking_lunge"
+                ],
+                "work_sec": 60,
+                "rest_sec": 60,
+                "block_rest": 90
+            },
+            {
+                "name": "Isolation",
+                "rounds": 3,
+                "drills": [
+                    "leg_extension",
+                    "leg_curl_machine"
+                ],
+                "work_sec": 45,
+                "rest_sec": 45,
+                "block_rest": 90
+            },
+            {
+                "name": "Zone 2 Recovery Run",
+                "rounds": 1,
+                "drills": [
+                    "zone2_run_short"
+                ],
+                "work_sec": 1500,
+                "rest_sec": 0,
+                "block_rest": 0
+            }
+        ]
+    },
+    "combat_day5_active_recovery": {
+        "name": "Day 5: Active Recovery (No Gym)",
+        "blocks": [
+            {
+                "name": "Mobility Work",
+                "rounds": 3,
+                "drills": [
+                    "hip_mobility",
+                    "ankle_mobility"
+                ],
+                "work_sec": 60,
+                "rest_sec": 15,
+                "block_rest": 30
+            },
+            {
+                "name": "Stretching",
+                "rounds": 2,
+                "drills": [
+                    "static_stretching"
+                ],
+                "work_sec": 120,
+                "rest_sec": 30,
+                "block_rest": 60
+            },
+            {
+                "name": "Optional Walk",
+                "rounds": 1,
+                "drills": [
+                    "long_walk"
+                ],
+                "work_sec": 1800,
+                "rest_sec": 0,
+                "block_rest": 0
+            }
+        ]
+    },
+    "combat_day6_endurance": {
+        "name": "Day 6: Endurance Base (Long Run)",
+        "blocks": [
+            {
+                "name": "Zone 2 Long Run",
+                "rounds": 1,
+                "drills": [
+                    "zone2_run_long"
+                ],
+                "work_sec": 4500,
+                "rest_sec": 0,
+                "block_rest": 0
+            }
+        ]
+    }
+}

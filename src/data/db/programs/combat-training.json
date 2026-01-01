@@ -1,0 +1,17 @@
+{
+    "id": "combat-training",
+    "name": "Combat Training",
+    "description": "Tactical fitness program for combat soldiers: builds strength, power, endurance, and recovery. 6 days/week with progressive overload.",
+    "duration_weeks": 1,
+    "frequency": "6 days/week",
+    "schedule": {
+        "week_1": {
+            "Sunday": "combat_day1_upper_hypertrophy",
+            "Monday": "combat_day2_lower_intervals",
+            "Tuesday": "combat_day3_upper_volume",
+            "Wednesday": "combat_day4_lower_explosive",
+            "Thursday": "combat_day5_active_recovery",
+            "Friday": "combat_day6_endurance"
+        }
+    }
+}

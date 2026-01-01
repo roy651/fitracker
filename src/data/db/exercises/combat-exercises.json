@@ -1,0 +1,127 @@
+{
+    "bench_press": {
+        "name": "Bench Press",
+        "instruction": "3 sets x 8-10 reps. Control the descent, explosive press up.",
+        "visual_ref": "bench_press.png"
+    },
+    "weighted_pullup": {
+        "name": "Weighted Pull-Up",
+        "instruction": "3 sets x 8-12 reps. Add weight with belt or dumbbell between feet. Full range of motion.",
+        "visual_ref": "weighted_pullup.png"
+    },
+    "lat_pulldown": {
+        "name": "Lat Pulldown",
+        "instruction": "3 sets x 8-12 reps. Alternative to pull-ups. Squeeze shoulder blades together at bottom.",
+        "visual_ref": "lat_pulldown.png"
+    },
+    "overhead_press": {
+        "name": "Overhead Press",
+        "instruction": "3 sets x 10 reps. Standing position. Critical for load-bearing stability.",
+        "visual_ref": "overhead_press.png"
+    },
+    "tbar_row": {
+        "name": "T-Bar Row",
+        "instruction": "3 sets x 10-12 reps. Keep back flat, pull to upper abs.",
+        "visual_ref": "tbar_row.png"
+    },
+    "dumbbell_row": {
+        "name": "Dumbbell Row",
+        "instruction": "3 sets x 10-12 reps. Alternative to T-bar. One arm at a time, keep core braced.",
+        "visual_ref": "dumbbell_row.png"
+    },
+    "weighted_plank": {
+        "name": "Weighted Plank",
+        "instruction": "Hold with plate on back. Keep core tight, hips level.",
+        "visual_ref": "weighted_plank.png"
+    },
+    "hanging_leg_raise": {
+        "name": "Hanging Leg Raise",
+        "instruction": "Control the movement. Raise legs to 90 degrees or higher.",
+        "visual_ref": "hanging_leg_raise.png"
+    },
+    "back_squat": {
+        "name": "Back Squat",
+        "instruction": "3 sets x 8 reps. Bar on upper back, break parallel depth.",
+        "visual_ref": "back_squat.png"
+    },
+    "rdl_combat": {
+        "name": "Romanian Deadlift",
+        "instruction": "3 sets x 10-12 reps. Hinge at hips, feel the hamstring stretch. Strengthens lower back.",
+        "visual_ref": "rdl_combat.png"
+    },
+    "vo2max_intervals": {
+        "name": "VO2 Max Intervals (4x4)",
+        "instruction": "4 rounds: 4 min at 90% max heart rate, 3 min easy recovery jog/walk.",
+        "visual_ref": "vo2max_intervals.png"
+    },
+    "weighted_dips": {
+        "name": "Weighted Dips",
+        "instruction": "3 sets to failure. Add weight with belt. Keep torso slightly forward.",
+        "visual_ref": "weighted_dips.png"
+    },
+    "seated_cable_row": {
+        "name": "Seated Cable Row",
+        "instruction": "3 sets x 12-15 reps. Pull to lower chest, squeeze shoulder blades.",
+        "visual_ref": "seated_cable_row.png"
+    },
+    "decline_pushup": {
+        "name": "Decline/Weighted Push-Up",
+        "instruction": "3 sets x 15-20 reps. Feet elevated or add weight plate on back.",
+        "visual_ref": "decline_pushup.png"
+    },
+    "bicep_curl": {
+        "name": "Bicep Curl",
+        "instruction": "2 sets. Dumbbells or barbell. Control the eccentric phase.",
+        "visual_ref": "bicep_curl.png"
+    },
+    "tricep_extension": {
+        "name": "Tricep Extension",
+        "instruction": "2 sets. Cable or dumbbell overhead. Full extension at bottom.",
+        "visual_ref": "tricep_extension.png"
+    },
+    "walking_lunge": {
+        "name": "Walking Lunges with Dumbbells",
+        "instruction": "3 sets x 20 steps. Simulates tactical movement with load. Keep torso upright.",
+        "visual_ref": "walking_lunge.png"
+    },
+    "leg_extension": {
+        "name": "Leg Extension Machine",
+        "instruction": "3 sets x 12-15 reps. Isolated quad work. Squeeze at top.",
+        "visual_ref": "leg_extension.png"
+    },
+    "leg_curl_machine": {
+        "name": "Leg Curl Machine",
+        "instruction": "3 sets x 12-15 reps. Isolated hamstring work. Control the release.",
+        "visual_ref": "leg_curl_machine.png"
+    },
+    "zone2_run_short": {
+        "name": "Zone 2 Run (Short)",
+        "instruction": "20-30 min at easy pace. Active recovery, clears lactic acid.",
+        "visual_ref": "zone2_run.png"
+    },
+    "hip_mobility": {
+        "name": "Hip Mobility Work",
+        "instruction": "Dynamic stretches and hip circles. Focus on full range of motion.",
+        "visual_ref": "hip_mobility.png"
+    },
+    "ankle_mobility": {
+        "name": "Ankle Mobility Work",
+        "instruction": "Ankle circles and stretch. Essential for combat movement.",
+        "visual_ref": "ankle_mobility.png"
+    },
+    "static_stretching": {
+        "name": "Static Stretching",
+        "instruction": "Hold each stretch 30-60 seconds. Full body coverage.",
+        "visual_ref": "static_stretching.png"
+    },
+    "long_walk": {
+        "name": "Long Walk",
+        "instruction": "Optional if energy permits. Low intensity active recovery.",
+        "visual_ref": "long_walk.png"
+    },
+    "zone2_run_long": {
+        "name": "Zone 2 Long Run",
+        "instruction": "60-90 min at comfortable pace. HR 130-145 bpm. Builds endurance base while preserving muscle.",
+        "visual_ref": "zone2_run_long.png"
+    }
+}
