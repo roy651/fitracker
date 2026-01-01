@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import WorkoutPreview from '../../../src/components/WorkoutPreview';
 import { getExercise } from '../../../src/data/workoutDatabase';
 
@@ -121,9 +121,10 @@ describe('WorkoutPreview', () => {
         const tile = screen.getByTestId('exercise-tile-drill-1');
         fireEvent.click(tile);
 
-        expect(screen.getByTestId('exercise-modal')).toBeInTheDocument();
-        expect(screen.getByText('Exercise drill-1')).toBeInTheDocument();
-        expect(screen.getByText('Instructions for drill-1')).toBeInTheDocument();
+        const modal = screen.getByTestId('exercise-modal');
+        // Scope queries to the modal to avoid finding the tile button which has the same text
+        expect(within(modal).getByText('Exercise drill-1')).toBeInTheDocument();
+        expect(within(modal).getByText('Instructions for drill-1')).toBeInTheDocument();
     });
 
     it('does not open modal when clicking tile for exercise that does not exist', () => {

@@ -42,7 +42,7 @@ export default function ExerciseDetailModal({
                 {/* Description */}
                 <div className="text-slate-300">
                     {exerciseDescription ? (
-                        <p className="whitespace-pre-wrap">{exerciseDescription}</p>
+                        <p data-testid="exercise-description" className="whitespace-pre-wrap">{exerciseDescription}</p>
                     ) : (
                         <p className="text-slate-500 italic">No description available</p>
                     )}

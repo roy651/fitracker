@@ -99,7 +99,8 @@ describe('ExerciseDetailModal', () => {
             />
         );
 
-        const description = screen.getByText(descriptionWithNewlines);
+        const description = screen.getByTestId('exercise-description');
+        expect(description.textContent).toBe(descriptionWithNewlines);
         expect(description).toHaveClass('whitespace-pre-wrap');
     });
 
