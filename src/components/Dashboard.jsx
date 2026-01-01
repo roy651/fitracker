@@ -150,20 +150,7 @@ export default function Dashboard({ onStartWorkout }) {
                 <p className="text-slate-400 text-sm">{selectedProgram?.name || 'Loading...'}</p>
             </header>
 
-            {/* Phase Banner */}
-            <div
-                className={`glass-card p-4 mb-6 animate-slide-up bg-gradient-to-r ${phaseInfo.color} bg-opacity-20`}
-            >
-                <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-white/10">
-                        <PhaseIcon className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                        <h2 className="font-semibold text-white">{phaseInfo.name}</h2>
-                        <p className="text-sm text-white/80">{phaseInfo.description}</p>
-                    </div>
-                </div>
-            </div>
+
 
             {/* Week Selector */}
             <section className="mb-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
@@ -263,6 +250,7 @@ export default function Dashboard({ onStartWorkout }) {
             {/* Workout Preview */}
             {selectedWorkout && (
                 <section
+                    key={selectedDay}
                     className="mb-6 glass-card p-4 animate-slide-up"
                     style={{ animationDelay: "0.3s" }}
                 >
