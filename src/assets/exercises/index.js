@@ -24,6 +24,26 @@ import twist from './twist.png';
 import stepUp from './step_up.png';
 import calfRaise from './calf_raise.png';
 
+// Enhanced Ski Program - New Images (Week 2+)
+import hipCircles from './hip_circles.png';
+import worldGreatest from './world_greatest.png';
+import gluteBridgeDyn from './glute_bridge_dyn.png';
+import lateralLungeDyn from './lateral_lunge_dyn.png';
+import legSwings from './leg_swings.png';
+import ankleCircles from './ankle_circles.png';
+import flow9090 from './90_90_flow.png';
+import slRdl from './sl_rdl.png';
+import lateralLunge from './lateral_lunge.png';
+import bandWalks from './band_walks.png';
+import fireHydrant from './fire_hydrant.png';
+import hollowHold from './hollow_hold.png';
+import superman from './superman.png';
+import sidePlank from './side_plank.png';
+import shoulderTaps from './shoulder_taps.png';
+import bicycleCrunch from './bicycle_crunch.png';
+// Placeholders for future weeks if not generated yet (mapped to best available match)
+// Will be updated as images are generated
+
 // Combat Training Program Imports
 import benchPress from './bench_press.png';
 import weightedPullup from './weighted_pullup.png';
@@ -77,7 +97,43 @@ export const exerciseImages = {
     step_up: stepUp,
     calf_raise: calfRaise,
 
-
+    // Enhanced Ski Program - New Exercises
+    hip_circles: hipCircles,
+    world_greatest: worldGreatest,
+    glute_bridge_dyn: gluteBridgeDyn,
+    lateral_lunge_dyn: lateralLungeDyn,
+    leg_swings: legSwings,
+    ankle_circles: ankleCircles,
+    "90_90_flow": flow9090,
+    sl_rdl: slRdl,
+    lateral_lunge: lateralLunge,
+    band_walks: bandWalks,
+    fire_hydrant: fireHydrant,
+    hollow_hold: hollowHold,
+    superman: superman,
+    side_plank: sidePlank,
+    shoulder_taps: shoulderTaps,
+    bicycle_crunch: bicycleCrunch,
+    tuck_hold: plank, // Placeholder (similar static hold)
+    single_leg_squat: bulgarian, // Placeholder
+    knee_to_wall: calfRaise, // Placeholder
+    ankle_edge_drill: calfRaise, // Placeholder
+    shin_raises: calfRaise, // Placeholder
+    lateral_hops: skater, // Placeholder
+    drop_jump: boxJump, // Placeholder
+    jump_squat: gobletSq, // Placeholder
+    lateral_box_jump: boxJump, // Placeholder
+    quick_feet_turns: skater, // Placeholder
+    tricep_dips: weightedDips, // Placeholder
+    renegade_row: dumbbellRow, // Placeholder
+    plank_reach: plank, // Placeholder
+    copen_plank: sidePlank, // Placeholder
+    prone_y_raise: superman, // Placeholder
+    a_skips: highKneesMock || legSwings, // Fallback logic handled below
+    arm_circles: hipCircles, // Placeholder
+    thoracic_rotation: twist, // Placeholder
+    wall_ankle_mob: calfRaise, // Placeholder
+    squat_hip_rotation: cossack, // Placeholder
 
     // Combat Training Program Mappings
     bench_press: benchPress,
@@ -109,6 +165,9 @@ export const exerciseImages = {
     ankle_mobility: calfRaise,
     static_stretching: hamScoop,
 };
+
+// Fallback logic for missing direct imports in the map above
+const highKneesMock = legSwings;
 
 /**
  * Get the image URL for an exercise
