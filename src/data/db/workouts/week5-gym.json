@@ -1,13 +1,13 @@
 {
-    "gym_monday_p1": {
-        "name": "Mon: Foundation Strength",
+    "gym_monday_w5": {
+        "name": "Mon: Landing Pro",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop",
+                    "leg_swings",
+                    "wall_ankle_mob",
                     "hip_opener"
                 ],
                 "work_sec": 50,
@@ -18,38 +18,38 @@
                 "name": "Circuit",
                 "rounds": 4,
                 "drills": [
-                    "goblet_sq_tempo",
-                    "rdl_heavy",
-                    "bulgarian_ss",
-                    "pallof_press"
+                    "drop_jump",
+                    "single_leg_squat",
+                    "tuck_hold",
+                    "calf_raise"
                 ],
                 "work_sec": 55,
-                "rest_sec": 35,
+                "rest_sec": 40,
                 "block_rest": 60
             },
             {
                 "name": "Finisher",
                 "rounds": 2,
                 "drills": [
-                    "plank_hold",
-                    "dead_bug"
+                    "copen_plank",
+                    "prone_y_raise"
                 ],
-                "work_sec": 50,
+                "work_sec": 45,
                 "rest_sec": 15,
                 "block_rest": 60
             }
         ]
     },
-    "gym_wednesday_p1": {
-        "name": "Wed: Stability & Mobility",
+    "gym_wednesday_w5": {
+        "name": "Wed: Balance Challenge",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "cossack_sq",
-                    "hip_opener"
+                    "90_90_flow",
+                    "ankle_circles",
+                    "lateral_lunge_dyn"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
@@ -59,21 +59,21 @@
                 "name": "Circuit",
                 "rounds": 4,
                 "drills": [
+                    "sl_rdl",
+                    "lateral_lunge",
                     "leg_press_sl",
-                    "hamstring_curl",
-                    "step_up",
-                    "dead_bug"
+                    "pallof_press"
                 ],
                 "work_sec": 55,
-                "rest_sec": 35,
+                "rest_sec": 40,
                 "block_rest": 60
             },
             {
                 "name": "Finisher",
                 "rounds": 3,
                 "drills": [
-                    "calf_raise",
-                    "pallof_press"
+                    "side_plank",
+                    "shoulder_taps"
                 ],
                 "work_sec": 50,
                 "rest_sec": 15,

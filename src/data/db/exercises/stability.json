@@ -1,37 +1,87 @@
 {
     "bosu_squat": {
         "name": "BOSU Air Squat",
-        "instruction": "Stand on dome. Maintain balance.",
+        "instruction": "Stand on dome. Maintain balance. 10-12 reps.",
         "visual_ref": "bosu_sq.png"
     },
     "bosu_bridge": {
         "name": "BOSU Hamstring Bridge",
-        "instruction": "Feet on dome, lift hips.",
+        "instruction": "Feet on dome, lift hips, hold 2s. 10 reps.",
         "visual_ref": "bosu_bridge.png"
     },
     "bosu_sl_bal": {
         "name": "BOSU SL Balance",
-        "instruction": "30s per leg on the dome.",
+        "instruction": "Single leg balance on dome. 30s per leg, then switch.",
         "visual_ref": "bosu_bal.png"
     },
     "bird_dog": {
         "name": "Bird-Dog (on BOSU)",
-        "instruction": "Knees on dome. Extend opposite limbs.",
+        "instruction": "Knees on dome. Extend opposite arm/leg, hold 3s. Alternate, 6 per side.",
         "visual_ref": "bird_dog.png"
     },
     "dead_bug": {
         "name": "Dead Bug",
-        "instruction": "Opposite arm/leg move. Back glued to floor.",
+        "instruction": "Opposite arm/leg move. Back glued to floor. Alternate, 8 per side.",
         "visual_ref": "dead_bug.png"
     },
     "plank_hold": {
         "name": "Forearm Plank",
-        "instruction": "Keep glutes and core engaged.",
+        "instruction": "Keep glutes and core engaged. Hold full duration.",
         "visual_ref": "plank.png"
     },
     "pallof_press": {
         "name": "Pallof Press",
-        "instruction": "Hold cable at chest, push out, resist rotation.",
+        "instruction": "Hold cable at chest, push out, resist rotation. Do one set facing left, one set facing right. 8 reps per side.",
         "visual_ref": "pallof.png"
+    },
+    "sl_rdl": {
+        "name": "Single-Leg Romanian Deadlift",
+        "instruction": "Hinge on one leg, extend other leg back. Complete all reps on one leg, then switch. 8 per leg.",
+        "visual_ref": "sl_rdl.png"
+    },
+    "lateral_lunge": {
+        "name": "Weighted Lateral Lunge",
+        "instruction": "Step wide, bend one knee, weight at chest. Alternate sides, 8 per side.",
+        "visual_ref": "lateral_lunge.png"
+    },
+    "tuck_hold": {
+        "name": "Wall Sit / Tuck Hold",
+        "instruction": "Knees at 90°, back against wall. Hold full duration.",
+        "visual_ref": "tuck_hold.png"
+    },
+    "band_walks": {
+        "name": "Banded Lateral Walks",
+        "instruction": "Band below knees, quarter squat. 10 steps right, then 10 steps left.",
+        "visual_ref": "band_walks.png"
+    },
+    "90_90_flow": {
+        "name": "90/90 Hip Flow",
+        "instruction": "Sit with legs in 90/90, flow between sides. 6 transitions per side.",
+        "visual_ref": "90_90_flow.png"
+    },
+    "single_leg_squat": {
+        "name": "Single-Leg Squat to Bench",
+        "instruction": "Squat on one leg, tap bench with glutes. Complete all reps, then switch. 6 per leg.",
+        "visual_ref": "single_leg_squat.png"
+    },
+    "fire_hydrant": {
+        "name": "Fire Hydrant",
+        "instruction": "Quadruped, lift bent knee to side. Complete set, then switch. 10 per leg.",
+        "visual_ref": "fire_hydrant.png"
+    },
+    "knee_to_wall": {
+        "name": "Knee-to-Wall Ankle Stretch",
+        "instruction": "Lunge near wall, drive knee past toes, hold 3s. 8 per ankle.",
+        "visual_ref": "knee_to_wall.png"
+    },
+    "ankle_edge_drill": {
+        "name": "Ankle Edging Drill",
+        "instruction": "Ski stance, roll ankles side to side like edging. Hold each edge 2s. 10 edges total.",
+        "visual_ref": "ankle_edge_drill.png"
+    },
+    "shin_raises": {
+        "name": "Shin Raises (AT Raises)",
+        "instruction": "Heels on step, lift toes high, lower slowly. 15 reps.",
+        "visual_ref": "shin_raises.png"
     }
 }

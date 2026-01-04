@@ -1,37 +1,37 @@
 {
     "goblet_sq_tempo": {
         "name": "Tempo Goblet Squat",
-        "instruction": "4s down, 1s hold at bottom. Focus on depth.",
+        "instruction": "4s down, 1s hold at bottom, 2s up. Focus on depth. 8-10 reps.",
         "visual_ref": "goblet_sq.png"
     },
     "rdl_heavy": {
         "name": "Romanian Deadlift",
-        "instruction": "Hinge hips back. Feel the hamstring stretch.",
+        "instruction": "Hinge hips back. Feel the hamstring stretch. 10-12 reps.",
         "visual_ref": "rdl.png"
     },
     "bulgarian_ss": {
         "name": "Bulgarian Split Squat",
-        "instruction": "Back foot on bench. Control the descent.",
+        "instruction": "Back foot on bench. Control the descent. Complete all reps, then switch. 8 per leg.",
         "visual_ref": "bulgarian.png"
     },
     "leg_press_sl": {
         "name": "Single Leg Press",
-        "instruction": "Focus on the 'pushing away' and slow return.",
+        "instruction": "Focus on 'pushing away' and slow return. Complete all reps, then switch. 10 per leg.",
         "visual_ref": "leg_press.png"
     },
     "hamstring_curl": {
         "name": "Hamstring Curl Machine",
-        "instruction": "Squeeze at top, 3s release (eccentric).",
+        "instruction": "Squeeze at top, 3s release (eccentric). 12 reps.",
         "visual_ref": "curl.png"
     },
     "step_up": {
         "name": "Weighted Step Up",
-        "instruction": "Drive through the heel, control the way down.",
+        "instruction": "Drive through heel, control down. Alternate legs, 8 per side.",
         "visual_ref": "step_up.png"
     },
     "calf_raise": {
         "name": "Calf Raises",
-        "instruction": "Full range of motion, pause at the top.",
+        "instruction": "Full range of motion, 2s pause at top. 15 reps.",
         "visual_ref": "calf_raise.png"
     }
 }

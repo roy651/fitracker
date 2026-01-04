@@ -11,29 +11,29 @@
             "Thursday": "home_thursday_p1"
         },
         "week_2": {
-            "Monday": "gym_monday_p1",
-            "Wednesday": "gym_wednesday_p1",
-            "Thursday": "home_thursday_p1"
+            "Monday": "gym_monday_w2",
+            "Wednesday": "gym_wednesday_w2",
+            "Thursday": "home_thursday_w2"
         },
         "week_3": {
-            "Monday": "gym_monday_p1",
-            "Wednesday": "gym_wednesday_p1",
-            "Thursday": "home_thursday_p1"
+            "Monday": "gym_monday_w3",
+            "Wednesday": "gym_wednesday_w3",
+            "Thursday": "home_thursday_w3"
         },
         "week_4": {
-            "Monday": "gym_monday_p2",
-            "Wednesday": "gym_wednesday_p2",
-            "Thursday": "home_thursday_p2"
+            "Monday": "gym_monday_w4",
+            "Wednesday": "gym_wednesday_w4",
+            "Thursday": "home_thursday_w4"
         },
         "week_5": {
-            "Monday": "gym_monday_p2",
-            "Wednesday": "gym_wednesday_p2",
-            "Thursday": "home_thursday_p2"
+            "Monday": "gym_monday_w5",
+            "Wednesday": "gym_wednesday_w5",
+            "Thursday": "home_thursday_w5"
         },
         "week_6": {
-            "Monday": "gym_monday_p2",
-            "Wednesday": "gym_wednesday_p2",
-            "Thursday": "home_thursday_p2"
+            "Monday": "gym_monday_w6",
+            "Wednesday": "gym_wednesday_w6",
+            "Thursday": "home_thursday_w6"
         }
     }
 }

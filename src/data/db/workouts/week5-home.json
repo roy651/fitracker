@@ -1,28 +1,28 @@
 {
-    "home_thursday_p1": {
-        "name": "Thu: Proprioception Base",
+    "home_thursday_w5": {
+        "name": "Thu: Eccentric Control",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop"
+                    "inchworm",
+                    "hip_circles"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
                 "block_rest": 30
             },
             {
-                "name": "BOSU Circuit",
+                "name": "Endurance Block",
                 "rounds": 5,
                 "drills": [
                     "bosu_squat",
+                    "nordic_drop",
                     "bosu_bridge",
-                    "bosu_sl_bal",
                     "bird_dog"
                 ],
-                "work_sec": 50,
+                "work_sec": 55,
                 "rest_sec": 25,
                 "block_rest": 60
             },
@@ -30,7 +30,7 @@
                 "name": "Finisher",
                 "rounds": 2,
                 "drills": [
-                    "plank_hold",
+                    "plank_reach",
                     "dead_bug"
                 ],
                 "work_sec": 50,

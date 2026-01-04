@@ -1,13 +1,13 @@
 {
-    "home_thursday_p1": {
-        "name": "Thu: Proprioception Base",
+    "home_thursday_w3": {
+        "name": "Thu: Ankle Stability",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop"
+                    "wall_ankle_mob",
+                    "cat_cow"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
@@ -18,8 +18,8 @@
                 "rounds": 5,
                 "drills": [
                     "bosu_squat",
+                    "knee_to_wall",
                     "bosu_bridge",
-                    "bosu_sl_bal",
                     "bird_dog"
                 ],
                 "work_sec": 50,
@@ -30,10 +30,10 @@
                 "name": "Finisher",
                 "rounds": 2,
                 "drills": [
-                    "plank_hold",
-                    "dead_bug"
+                    "shoulder_taps",
+                    "hollow_hold"
                 ],
-                "work_sec": 50,
+                "work_sec": 45,
                 "rest_sec": 15,
                 "block_rest": 60
             }

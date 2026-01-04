@@ -1,22 +1,82 @@
 {
     "cat_cow": {
         "name": "Cat-Cow Stretch",
-        "instruction": "Move spine rhythmically. Breathe deeply.",
+        "instruction": "Move spine rhythmically. Breathe deeply. 8-10 reps.",
         "visual_ref": "cat_cow.png"
     },
     "dyn_ham_scoop": {
         "name": "Dynamic Hamstring Scoop",
-        "instruction": "Step forward, heel down, scoop ground.",
+        "instruction": "Step forward, heel down, scoop ground. Alternate legs, 6 per side.",
         "visual_ref": "ham_scoop.png"
     },
     "hip_opener": {
         "name": "Dynamic Hip Opener",
-        "instruction": "Deep lunge, rotate torso toward front knee.",
+        "instruction": "Deep lunge, rotate torso toward front knee. Alternate sides, 5 per side.",
         "visual_ref": "hip_opener.png"
     },
     "cossack_sq": {
         "name": "Cossack Squat",
-        "instruction": "Wide stance, sit into one heel. Alternating.",
+        "instruction": "Wide stance, sit into one heel. Alternate sides, 6 per side.",
         "visual_ref": "cossack.png"
+    },
+    "world_greatest": {
+        "name": "World's Greatest Stretch",
+        "instruction": "Lunge + rotate torso + reach overhead. Alternate sides, 5 per side (hold 3s each).",
+        "visual_ref": "world_greatest.png"
+    },
+    "leg_swings": {
+        "name": "Leg Swings",
+        "instruction": "Stand on one leg, swing other forward/back. 10 swings per leg, then switch.",
+        "visual_ref": "leg_swings.png"
+    },
+    "hip_circles": {
+        "name": "Active Hip Circles",
+        "instruction": "Lift knee, circle outward then inward. 5 circles each direction per leg.",
+        "visual_ref": "hip_circles.png"
+    },
+    "ankle_circles": {
+        "name": "Ankle Circles",
+        "instruction": "Point and circle ankle. 10 circles each direction per foot.",
+        "visual_ref": "ankle_circles.png"
+    },
+    "inchworm": {
+        "name": "Inchworm",
+        "instruction": "Walk hands out to plank, walk feet to hands, stand. 6 reps.",
+        "visual_ref": "inchworm.png"
+    },
+    "a_skips": {
+        "name": "A-Skips",
+        "instruction": "Skip forward with high knee drive, alternate legs. 20 total skips.",
+        "visual_ref": "a_skips.png"
+    },
+    "lateral_lunge_dyn": {
+        "name": "Dynamic Lateral Lunge",
+        "instruction": "Wide step to side, shift weight, push back. Alternate sides, 6 per side.",
+        "visual_ref": "lateral_lunge_dyn.png"
+    },
+    "arm_circles": {
+        "name": "Arm Circles",
+        "instruction": "Large circles forward then backward. 10 each direction.",
+        "visual_ref": "arm_circles.png"
+    },
+    "thoracic_rotation": {
+        "name": "Thoracic Rotation",
+        "instruction": "Quadruped position, hand behind head, rotate open. 6 per side.",
+        "visual_ref": "thoracic_rotation.png"
+    },
+    "wall_ankle_mob": {
+        "name": "Wall Ankle Mobilization",
+        "instruction": "Front foot near wall, drive knee past toes. 8 pulses per ankle.",
+        "visual_ref": "wall_ankle_mob.png"
+    },
+    "glute_bridge_dyn": {
+        "name": "Dynamic Glute Bridge",
+        "instruction": "Hip thrust with 2s hold at top, squeeze glutes. 10 reps.",
+        "visual_ref": "glute_bridge_dyn.png"
+    },
+    "squat_hip_rotation": {
+        "name": "Squat Hip Rotation",
+        "instruction": "In squat, rotate knees inward/outward. 8 rotations.",
+        "visual_ref": "squat_hip_rotation.png"
     }
 }

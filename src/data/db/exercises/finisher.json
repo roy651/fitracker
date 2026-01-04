@@ -1,0 +1,52 @@
+{
+    "hollow_hold": {
+        "name": "Hollow Body Hold",
+        "instruction": "Legs and shoulders off ground, back flat to floor. Hold full duration.",
+        "visual_ref": "hollow_hold.png"
+    },
+    "side_plank": {
+        "name": "Side Plank",
+        "instruction": "On forearm, stack feet, hold hips up. Hold half duration per side, then switch.",
+        "visual_ref": "side_plank.png"
+    },
+    "shoulder_taps": {
+        "name": "Plank Shoulder Taps",
+        "instruction": "High plank, tap opposite shoulders. Keep hips stable. Alternate, 10 per side.",
+        "visual_ref": "shoulder_taps.png"
+    },
+    "superman": {
+        "name": "Superman Hold",
+        "instruction": "Face down, lift arms+chest+legs simultaneously. Hold 3-5s, lower, repeat. 8 reps.",
+        "visual_ref": "superman.png"
+    },
+    "tricep_dips": {
+        "name": "Tricep Dips",
+        "instruction": "Hands on bench, dip down to 90°, push up. 12-15 reps.",
+        "visual_ref": "tricep_dips.png"
+    },
+    "renegade_row": {
+        "name": "Renegade Row",
+        "instruction": "Plank with dumbbells, row one arm while stabilizing. Alternate arms, 8 per side.",
+        "visual_ref": "renegade_row.png"
+    },
+    "plank_reach": {
+        "name": "Plank Reach",
+        "instruction": "Forearm plank, extend one arm forward, hold 2s. Alternate arms, 6 per side.",
+        "visual_ref": "plank_reach.png"
+    },
+    "bicycle_crunch": {
+        "name": "Bicycle Crunch",
+        "instruction": "Elbow to opposite knee, alternating. Keep lower back pressed down. 20 total (10 per side).",
+        "visual_ref": "bicycle_crunch.png"
+    },
+    "copen_plank": {
+        "name": "Copenhagen Plank",
+        "instruction": "Side plank with top leg on bench, bottom leg hanging. Hold half duration, then switch sides.",
+        "visual_ref": "copen_plank.png"
+    },
+    "prone_y_raise": {
+        "name": "Prone Y-Raise",
+        "instruction": "Face down on floor or bench, raise both arms in Y shape, squeeze upper back. 10-12 reps.",
+        "visual_ref": "prone_y_raise.png"
+    }
+}

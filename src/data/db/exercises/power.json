@@ -1,22 +1,47 @@
 {
     "box_jump": {
         "name": "Box Jump",
-        "instruction": "Explode up, land soft, step down.",
+        "instruction": "Explode up, land soft, step down. Reset between reps. 8-10 reps.",
         "visual_ref": "box_jump.png"
     },
     "skater_hops": {
         "name": "Skater Hops",
-        "instruction": "Lateral explosive jumps. Hold land 1s.",
+        "instruction": "Lateral explosive jumps. Hold landing 1s. Alternate sides continuously, 10 per side.",
         "visual_ref": "skater.png"
     },
     "nordic_drop": {
         "name": "Nordic Hamstring Drop",
-        "instruction": "Lower torso slowly to floor using hams.",
+        "instruction": "Lower torso slowly to floor using hamstrings. 6-8 reps.",
         "visual_ref": "nordic.png"
     },
     "russian_twist": {
         "name": "Weighted Russian Twist",
-        "instruction": "Rotate shoulders side to side.",
+        "instruction": "Rotate shoulders side to side. Each touch = 1 rep. 20 total reps (10 per side).",
         "visual_ref": "twist.png"
+    },
+    "lateral_hops": {
+        "name": "Lateral Hops",
+        "instruction": "Quick side-to-side hops, soft landing. Stay on same spot. 20 total hops.",
+        "visual_ref": "lateral_hops.png"
+    },
+    "drop_jump": {
+        "name": "Drop Jump Hold",
+        "instruction": "Step off low box, land in squat, hold 2s. Focus on quiet landing. 8 reps.",
+        "visual_ref": "drop_jump.png"
+    },
+    "jump_squat": {
+        "name": "Jump Squat",
+        "instruction": "Squat down, explode up, land soft into next squat. 10-12 reps.",
+        "visual_ref": "jump_squat.png"
+    },
+    "lateral_box_jump": {
+        "name": "Lateral Box Jump",
+        "instruction": "Jump sideways onto box, step down, repeat other side. Alternate, 5 per side.",
+        "visual_ref": "lateral_box_jump.png"
+    },
+    "quick_feet_turns": {
+        "name": "Quick Feet Turn Drill",
+        "instruction": "Fast feet in place, pivot 180° every 3s. Continue for full duration.",
+        "visual_ref": "quick_feet_turns.png"
     }
 }

@@ -1,55 +1,55 @@
 {
-    "gym_monday_p1": {
-        "name": "Mon: Foundation Strength",
+    "gym_monday_w6": {
+        "name": "Mon: Ski Power Peak",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop",
-                    "hip_opener"
+                    "world_greatest",
+                    "a_skips",
+                    "squat_hip_rotation"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
                 "block_rest": 30
             },
             {
-                "name": "Circuit",
+                "name": "Power Circuit",
                 "rounds": 4,
                 "drills": [
-                    "goblet_sq_tempo",
-                    "rdl_heavy",
+                    "box_jump",
+                    "lateral_hops",
                     "bulgarian_ss",
-                    "pallof_press"
+                    "russian_twist"
                 ],
-                "work_sec": 55,
-                "rest_sec": 35,
+                "work_sec": 50,
+                "rest_sec": 45,
                 "block_rest": 60
             },
             {
                 "name": "Finisher",
                 "rounds": 2,
                 "drills": [
-                    "plank_hold",
-                    "dead_bug"
+                    "renegade_row",
+                    "hollow_hold"
                 ],
                 "work_sec": 50,
-                "rest_sec": 15,
+                "rest_sec": 20,
                 "block_rest": 60
             }
         ]
     },
-    "gym_wednesday_p1": {
-        "name": "Wed: Stability & Mobility",
+    "gym_wednesday_w6": {
+        "name": "Wed: Agility Mastery",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "cossack_sq",
-                    "hip_opener"
+                    "ankle_edge_drill",
+                    "hip_circles",
+                    "thoracic_rotation"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
@@ -59,21 +59,21 @@
                 "name": "Circuit",
                 "rounds": 4,
                 "drills": [
-                    "leg_press_sl",
-                    "hamstring_curl",
-                    "step_up",
-                    "dead_bug"
+                    "quick_feet_turns",
+                    "drop_jump",
+                    "skater_hops",
+                    "tuck_hold"
                 ],
-                "work_sec": 55,
-                "rest_sec": 35,
+                "work_sec": 50,
+                "rest_sec": 40,
                 "block_rest": 60
             },
             {
                 "name": "Finisher",
                 "rounds": 3,
                 "drills": [
-                    "calf_raise",
-                    "pallof_press"
+                    "tricep_dips",
+                    "side_plank"
                 ],
                 "work_sec": 50,
                 "rest_sec": 15,

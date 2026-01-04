@@ -1,13 +1,13 @@
 {
-    "home_thursday_p1": {
-        "name": "Thu: Proprioception Base",
+    "home_thursday_w2": {
+        "name": "Thu: Hip Flow Session",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop"
+                    "90_90_flow",
+                    "cat_cow"
                 ],
                 "work_sec": 50,
                 "rest_sec": 10,
@@ -18,7 +18,7 @@
                 "rounds": 5,
                 "drills": [
                     "bosu_squat",
-                    "bosu_bridge",
+                    "fire_hydrant",
                     "bosu_sl_bal",
                     "bird_dog"
                 ],
@@ -31,9 +31,9 @@
                 "rounds": 2,
                 "drills": [
                     "plank_hold",
-                    "dead_bug"
+                    "bicycle_crunch"
                 ],
-                "work_sec": 50,
+                "work_sec": 45,
                 "rest_sec": 15,
                 "block_rest": 60
             }

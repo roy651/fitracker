@@ -1,17 +1,17 @@
 {
-    "gym_monday_p2": {
+    "gym_monday_w4": {
         "name": "Mon: Explosive Power",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "cat_cow",
-                    "dyn_ham_scoop",
-                    "cossack_sq"
+                    "inchworm",
+                    "leg_swings",
+                    "squat_hip_rotation"
                 ],
-                "work_sec": 45,
-                "rest_sec": 15,
+                "work_sec": 50,
+                "rest_sec": 10,
                 "block_rest": 30
             },
             {
@@ -19,64 +19,64 @@
                 "rounds": 4,
                 "drills": [
                     "box_jump",
+                    "jump_squat",
                     "rdl_heavy",
-                    "skater_hops",
-                    "russian_twist"
+                    "pallof_press"
                 ],
-                "work_sec": 40,
-                "rest_sec": 50,
+                "work_sec": 50,
+                "rest_sec": 45,
                 "block_rest": 60
             },
             {
-                "name": "Strength Finisher",
+                "name": "Finisher",
                 "rounds": 2,
                 "drills": [
-                    "goblet_sq_tempo",
+                    "tricep_dips",
                     "plank_hold"
                 ],
                 "work_sec": 50,
-                "rest_sec": 30,
+                "rest_sec": 20,
                 "block_rest": 60
             }
         ]
     },
-    "gym_wednesday_p2": {
-        "name": "Wed: Speed & Endurance",
+    "gym_wednesday_w4": {
+        "name": "Wed: Quick Turn Agility",
         "blocks": [
             {
                 "name": "Warmup",
                 "rounds": 2,
                 "drills": [
-                    "hip_opener",
-                    "dyn_ham_scoop",
-                    "cossack_sq"
+                    "a_skips",
+                    "hip_circles",
+                    "arm_circles"
                 ],
-                "work_sec": 45,
-                "rest_sec": 15,
+                "work_sec": 50,
+                "rest_sec": 10,
                 "block_rest": 30
             },
             {
                 "name": "Circuit",
                 "rounds": 4,
                 "drills": [
-                    "leg_press_sl",
-                    "nordic_drop",
-                    "skater_hops",
-                    "pallof_press"
+                    "quick_feet_turns",
+                    "lateral_box_jump",
+                    "hamstring_curl",
+                    "step_up"
                 ],
-                "work_sec": 45,
-                "rest_sec": 45,
+                "work_sec": 50,
+                "rest_sec": 40,
                 "block_rest": 60
             },
             {
-                "name": "Core Burn",
+                "name": "Finisher",
                 "rounds": 3,
                 "drills": [
-                    "dead_bug",
-                    "russian_twist"
+                    "renegade_row",
+                    "bicycle_crunch"
                 ],
                 "work_sec": 50,
-                "rest_sec": 10,
+                "rest_sec": 15,
                 "block_rest": 60
             }
         ]
