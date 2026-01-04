@@ -41,8 +41,11 @@ import superman from './superman.png';
 import sidePlank from './side_plank.png';
 import shoulderTaps from './shoulder_taps.png';
 import bicycleCrunch from './bicycle_crunch.png';
-// Placeholders for future weeks if not generated yet (mapped to best available match)
-// Will be updated as images are generated
+import inchworm from './inchworm.png';
+import aSkips from './a_skips.png';
+import armCircles from './arm_circles.png';
+import thoracicRotation from './thoracic_rotation.png';
+import wallAnkleMob from './wall_ankle_mob.png';
 
 // Combat Training Program Imports
 import benchPress from './bench_press.png';
@@ -114,7 +117,13 @@ export const exerciseImages = {
     side_plank: sidePlank,
     shoulder_taps: shoulderTaps,
     bicycle_crunch: bicycleCrunch,
-    tuck_hold: plank, // Placeholder (similar static hold)
+    inchworm: inchworm,
+    a_skips: aSkips,
+    arm_circles: armCircles,
+    thoracic_rotation: thoracicRotation,
+    wall_ankle_mob: wallAnkleMob,
+
+    tuck_hold: plank, // Placeholder
     single_leg_squat: bulgarian, // Placeholder
     knee_to_wall: calfRaise, // Placeholder
     ankle_edge_drill: calfRaise, // Placeholder
@@ -129,10 +138,6 @@ export const exerciseImages = {
     plank_reach: plank, // Placeholder
     copen_plank: sidePlank, // Placeholder
     prone_y_raise: superman, // Placeholder
-    a_skips: highKneesMock || legSwings, // Fallback logic handled below
-    arm_circles: hipCircles, // Placeholder
-    thoracic_rotation: twist, // Placeholder
-    wall_ankle_mob: calfRaise, // Placeholder
     squat_hip_rotation: cossack, // Placeholder
 
     // Combat Training Program Mappings
